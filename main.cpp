@@ -11,10 +11,11 @@ map<double, double> getData(double startEnergy, double endEnergy, int dataPoints
 {
   double stepSize = (endEnergy - startEnergy) / dataPoints;
   double energy, vprehadsp, vprehadtm, vpimhad, vprelepsp, vpreleptm, vpimlep, vpretopsp, vpretoptm;
-  int nrflag;
+  int nrflag = 0; // either 0 or 1? check what does defined in Fortran code
   map<double, double> data;
   for(double e=startEnergy; e<=endEnergy; e= e+stepSize) {
-      data[e] = vphlmntv2_(&e, &vprehadsp, &vprehadtm, &vpimhad, &vprelepsp, &vpreleptm, &vpimlep, &vpretopsp, &vpretoptm, &nrflag);
+      vphlmntv2_(&e, &vprehadsp, &vprehadtm, &vpimhad, &vprelepsp, &vpreleptm, &vpimlep, &vpretopsp, &vpretoptm, &nrflag);
+      data[e] = vpimhad;	
   }
   return data;
 }
@@ -22,19 +23,11 @@ map<double, double> getData(double startEnergy, double endEnergy, int dataPoints
 
 int main()
 {
-    double energy, vprehadsp, vprehadtm, vpimhad, vprelepsp, vpreleptm, vpimlep, vpretopsp, vpretoptm;
-    int nrflag = 0;
-    energy = 3;
-    
-    vphlmntv2_(&energy, &vprehadsp, &vprehadtm, &vpimhad, &vprelepsp, &vpreleptm, &vpimlep, &vpretopsp, &vpretoptm, &nrflag);
+  map<double, double> data = getData(0.5, 2.5, 1000);
 
-
-    cout << energy << " " << vpimhad << endl;
+  for(auto const& ent : data) {
+    cout << ent.first << " " << ent.second << endl;
+  }
     
-    map <double, double>test;
-    test[3.3] = 4.4;
-
-    cout << test[3.3] << endl;
-    
-    return 0;
+  return 0;
 }

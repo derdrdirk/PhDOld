@@ -121,16 +121,6 @@ c      real*8 function alf_top( s )
 c  Integer flag nrflag=0 to exclude, nrflag=1 to include the hadronic 
 c   contributions from the narrow resonances J/psi, psi', Upsilon(1-4S).
 ctt
-      function getDataPoint(e) result(vpimhad)
-      real*8 e, vprehadsp, vprehadtm, vpimhad
-     &     vprelepsp, vpreleptm, vpimlep,
-     &     vpretopsp, vpretoptm
-      integer nrflag
-      call vphlmntv2(e,
-     & vprehadsp,vprehadtm,vpimhad,vprelepsp,vpreleptm,vpimlep,
-     & vpretopsp,vpretoptm,nrflag)
-      end function getDataPoint
-      
       subroutine vphlmntv2(energy, 
      & vprehadsp,vprehadtm,vpimhad,vprelepsp,vpreleptm,vpimlep,
      & vpretopsp,vpretoptm,nrflag)
@@ -184,8 +174,8 @@ c Space-like \Delta\alpha_{lep}^{(5)} = Re\Pi_{lep}^{(5)}
 c Space-like \Delta\alpha_{top} = Re\Pi_{top}
       vpretopsp=alf_top(s)
 c
-      write(*,98) vpimhad
-98    format(6F11.6)
+c      write(*,98) vpimhad
+c98    format(6F11.6)
       return
 c
       end
