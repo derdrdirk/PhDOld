@@ -1,15 +1,13 @@
 // Copyright 2016 <Dirk Hornung>
 #include <iostream>
-#include <map>
 #include "Experiment/experiment.h"
-#include <stdio.h>
 
 int main() {
 
-  Experiment exp(0.5, 2.0, 10);
+  Experiment exp(0.1, 3.0, 10000);
   exp.exportData();
   exp.plot();
-  
+  std::cout << "Integral: " << exp.integrate() << std::endl;
   
   return 0;
 }

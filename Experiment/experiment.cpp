@@ -8,12 +8,15 @@ extern"C" {
 
 Experiment::Experiment(double minEnergy, double maxEnergy, int dataPoints) {
   std::cout << "Experiment..." << std::endl;
+  
   double stepSize = (maxEnergy - minEnergy) / dataPoints;
+  stepSize_ = stepSize;
+  
   double energy, vprehadsp, vprehadtm, vpimhad, vprelepsp, vpreleptm, vpimlep, vpretopsp, vpretoptm;
   int nrflag = 0;  // either 0 or 1? check what does defined in Fortran code
   for  (double e=minEnergy; e <= maxEnergy; e = e+stepSize) {
       vphlmntv2_(&e, &vprehadsp, &vprehadtm, &vpimhad, &vprelepsp, &vpreleptm, &vpimlep, &vpretopsp, &vpretoptm, &nrflag);
-      data[e] = vpimhad;
+      data[e] = vpimhad * teubnerFactor;
   }
   std::cout << "Data taken" << std::endl;
 }
@@ -36,4 +39,12 @@ void Experiment::exportData() {
 
 void Experiment::plot() {
    std::system("gnuplot> load '../Experiment/plot.gp'");
+}
+
+double Experiment::integrate() {
+  double result = 0;
+  for (auto const& ent : data) {
+    result += ent.second * stepSize_;
+  }
+  return result;
 }
