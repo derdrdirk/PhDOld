@@ -1,4 +1,5 @@
 #include "experiment.h"
+#include <fstream>
 
 extern"C" {
     double vphlmntv2_(double *energy, double *vprehadsp, double *vprehadtm, double *vpimhad, double *vprelepsp, double *vpreleptm, double *vpimlep, double *vpretopsp, double *vpretoptm, int *nrflag);
@@ -17,10 +18,22 @@ Experiment::Experiment(double minEnergy, double maxEnergy, int dataPoints) {
   std::cout << "Data taken" << std::endl;
 }
 
-void Experiment::exp() {
+void Experiment::listData() {
   for (auto const& ent : data) {
     std::cout << ent.first << " " << ent.second << std::endl;
   }
-  std::cout << "Experiment Start" << std::endl;
   return;
+}
+
+void Experiment::exportData() {
+  std::ofstream dataFile;
+  dataFile.open("data.dat");
+  for (auto const& ent : data) {
+    dataFile << ent.first << "\t" << ent.second << "\n";
+  }
+  dataFile.close();
+}
+
+void Experiment::plot() {
+   std::system("gnuplot> load '../Experiment/plot.gp'");
 }

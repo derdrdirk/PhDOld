@@ -1,0 +1,1 @@
+plot "../build/data.dat" using 1:2 with lines
