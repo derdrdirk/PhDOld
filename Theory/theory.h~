@@ -1,0 +1,4 @@
+class Theory {
+ public:
+  Theory();
+}

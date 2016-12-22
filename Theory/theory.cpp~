@@ -1,0 +1,5 @@
+#include "theory.h"
+
+Theory::Theory () {
+  std::cout << "Theory..." << std::endl;
+}
