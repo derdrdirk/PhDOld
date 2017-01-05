@@ -5,19 +5,18 @@ extern"C" {
 }
 
 
-Experiment::Experiment(double minEnergy, double maxEnergy, int dataPoints) {
+Experiment::Experiment(double minEnergy, double maxEnergy, int numBins) {
   std::cout << "Experiment..." << std::endl;
   
-  double stepSize = (maxEnergy - minEnergy) / dataPoints;
-  stepSize_ = stepSize;
+  binWidth = (maxEnergy - minEnergy) / numBins;
   
   double energy, vprehadsp, vprehadtm, vpimhad, vprelepsp, vpreleptm, vpimlep, vpretopsp, vpretoptm;
   int nrflag = 0;  // either 0 or 1? check what does defined in Fortran code
-  for  (double e=minEnergy; e <= maxEnergy; e = e+stepSize) {
+  for  (double e=minEnergy; e <= maxEnergy; e = e+binWidth) {
       vphlmntv2_(&e, &vprehadsp, &vprehadtm, &vpimhad, &vprelepsp, &vpreleptm, &vpimlep, &vpretopsp, &vpretoptm, &nrflag);
       data[e] = vpimhad * teubnerFactor;
   }
-  std::cout << "Data taken" << std::endl;
+  std::cout << "Datataken" << std::endl;
 }
 
 void Experiment::listData() {
@@ -40,10 +39,45 @@ void Experiment::plot() {
    std::system("gnuplot> load '../Experiment/plot.gp'");
 }
 
-double Experiment::integrate() {
+
+// Experiment::integrate(double s0)
+// 
+// Integrate over the experimental data points.
+// Loop through data map.
+// Find center of height between neighbouring points.
+// Add rectangle (binWidht * binHeight) to integral sum.
+// Compensate 1 bin for half bin at beginning at end.
+    
+double Experiment::integrate(double s0) {
   double result = 0;
-  for (auto const& ent : data) {
-    result += ent.second * stepSize_;
+
+  std::map<double, double> intMap = data;
+  
+  int numIntBins = 0;
+
+  auto it = std::begin(intMap);
+
+  for(auto end=std::end(intMap); it!=end; ++it) {
+    if (it->first > s0) {
+      intMap.erase(it, intMap.end() );
+      break;
+    }
   }
+
+  
+  it = std::begin(intMap);
+  double y2, y1 = it->second;
+  result += 0.5 * binWidth * y1;
+  ++it;
+
+  
+  for(auto end=std::end(intMap); it!=end; ++it) {
+    y2 = it->second;
+    result += binWidth * (y1 + y2) / 2;
+    y1 = y2;
+  }
+
+  result += 0.5 * binWidth * y2;
+  
   return result;
 }

@@ -4,13 +4,14 @@
 
 class Experiment {
  public:
-  Experiment(double minEnergy, double maxEnergy, int dataPoints);
+  Experiment(double minEnergy, double maxEnergy, int numBins);
   void exportData();
   void listData();
   void plot();
-  double integrate();
+  double integrate(double s0);
  private:
   std::map<double, double> data;
   double teubnerFactor = -411;  // R = -3 \alpha Im \Pi
-  double stepSize_;
+  double numBins;
+  double binWidth;
 };
