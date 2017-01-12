@@ -1,0 +1,318 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{jheppub}
+\usepackage{slashed}
+\usepackage{amsthm}
+
+\usepackage{mathtools}  
+
+% BOXES
+\usepackage{color}
+\definecolor{myblue}{rgb}{.8, .8, 1}
+\usepackage{empheq}
+
+\usepackage{physics} %Im in imaginary part
+
+\usepackage{slashed}
+
+
+\newlength\mytemplen
+\newsavebox\mytempbox
+
+\makeatletter
+\newcommand\mybluebox{%
+    \@ifnextchar[%]
+       {\@mybluebox}%
+       {\@mybluebox[0pt]}}
+
+\def\@mybluebox[#1]{%
+    \@ifnextchar[%]
+       {\@@mybluebox[#1]}%
+       {\@@mybluebox[#1][0pt]}}
+
+\def\@@mybluebox[#1][#2]#3{
+    \sbox\mytempbox{#3}%
+    \mytemplen\ht\mytempbox
+    \advance\mytemplen #1\relax
+    \ht\mytempbox\mytemplen
+    \mytemplen\dp\mytempbox
+    \advance\mytemplen #2\relax
+    \dp\mytempbox\mytemplen
+    \colorbox{myblue}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+
+\makeatother
+%%%%%%%%%%%5
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% MAIN BODY OF THE ARTICLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\subheader{13.10.2015}
+
+\title{$e^+ e^-$ Scattering to Hadrons Notes}
+
+\author[a]{Dirk Hornung}
+
+\affiliation[a]{Institut de F\'\i sica d’Altes Energies (IFAE), The Barcelona 
+                Institute of Science and Technology,\\ Campus UAB,
+                08193 Bellaterra (Barcelona) Spain}
+
+\emailAdd{dirkhornung91@gmail.com}
+
+
+\abstract{Abstract...}%
+
+\keywords{Keywords...}
+
+\let\conj
+
+\begin{document}
+\maketitle
+
+% \include{./tex/old}
+
+\section{Theory}\label{sect1}
+The vector two-point function (correlation function) $\Pi(s)$ is given by
+\begin{equation}
+\begin{split}
+	\Pi_{\mu\nu}(q^2) &= i \int d^D x e^{iqx} \langle 0 | T \{ j_\mu (x) j_\nu (0) \} | 0 \rangle \\
+	&= (q_\mu q_\nu - g_{\mu\nu} q^2) \Pi(q^2)
+\end{split},
+\end{equation}
+where $J_\mu = :\bar q(x) \gamma_\mu q(x):$ is the vector current. 
+
+We now want to give a more detailed derivation of the second idendity of the previous equation. Due to the Lorentz structure of $\Pi(q^2)$ we can rewrite the vector two-point function into
+\begin{equation}
+	\Pi_{\mu\nu}(q^2) = g_{\mu\nu} A(q^2) + q_\mu q_\nu B(q^2),
+\end{equation}
+where $A(q^2)$ and $B(q^2)$ are the two functions we are interested in. Multiplying both sides with $q^\mu$ yields
+\begin{equation}
+\begin{split}
+	q^\mu \Pi_{\mu\nu} (q^2) &= q^\mu g_{\mu\nu} A(q^2) + q^\mu q_\mu q_\nu B(q^2) \\
+	&= q_\mu [ A(q^2) + q^2 B(q^2) ].
+\end{split}
+\end{equation}
+Since the vector current $\partial^\mu j_\mu$ is conserved the correlation functino has to vanish. 
+\begin{equation}
+	\partial^\mu j_\mu = 0 \qquad \Rightarrow \qquad q^\mu \Pi(q^2) = 0
+\end{equation}
+Hence
+\begin{equation}
+	0 = q_\mu [ A(q^2) + q^2 B(q^2) ] \qquad \Rightarrow \qquad A = -q^2 B,
+\end{equation}
+if $q_\mu \neq 0$. Plugging in our result for $A(q^2)$ and substituting $B(q^2)$ trough $\Pi(q^2)$ in the final step gives us
+\begin{equation}
+\begin{split}
+	\Pi_{\mu\nu}(q^2) &= g_{\mu\nu}(-q^2B(q^2)) + q_\mu q_\nu B(q^2) \\
+	&= (q_\mu q_\nu - q^2 g_{\mu\nu}) \Pi(q^2).
+\end{split}
+\end{equation}
+\textcolor{red}{What exactly is s? Where does the correlator come from?}
+
+$\Pi(q^2)$ itself is not a physical quantity. However, we can define two physical quantities out of the two-point correlator. Setting $s=q^2$, the spectral function $\rho(s)$ and the Adler function $D(s)$ are given by 
+\begin{equation}
+	\rho(s) \equiv \frac{1}{\pi} Im \Pi(s) \qquad D(s) \equiv -s \frac{d \Pi(s)}{ds}
+\end{equation}
+
+Using Kramers-Kronig relation we can connect the theoretical, non physical quantity $\Pi(s)$ with the experimental measurable spectral function $\rho(s)$. With Kramer-Kronic relation we can display the real part of a function as its imaginary part and vice verse. Let $f(x) = Re f(x) + i Im f(x)$ be a complex function of the variable s. Suppose this function is analytic in the closed upper half-plane of s and vanishes like $1/|s|$ as $|s| \rightarrow \infty$. Then the real part of f can be given as integral over the complex part of f
+\begin{equation}
+	Re f(s) = \frac{1}{i \pi} P \int_{-\infty}^{\infty} \frac{Im f(s')}{s' - s}ds'
+\end{equation}
+
+To derive the Kramers-Kronig relation we start from Cauchy's theorem. Given an analytic function $f(s)$ in the closed upper half plane. The function $s' \rightarrow f(s') / (s' - s)$, where s and s' are real values, is also be analytic in the upper half of the plane. The Cauchy's residum theorem then consequently states that
+\begin{equation}
+	\oint \frac{f(s')}{s'-s} ds' = 0.
+\end{equation}
+\textcolor{red}{include graph}
+Following the contour integral in \textcolor{red}{figure above} we are left with
+\begin{equation}
+\begin{split}
+	\oint \frac{f(s')}{s'-s}ds' &= \int_{-R}^{-\epsilon} \frac{f(s')}{s'-s}ds' + \int_{\gamma_{\epsilon^+}} \frac{f(s')}{s'-s}ds' + \int_\epsilon^R \frac{f(s')}{s'-s}ds' + \int_{\gamma_R}^+ \frac{f(s')}{s'-s}ds' \\
+	&= \oint_{-\infty}^{\infty} \frac{f(s')}{s'-s}ds',
+\end{split}
+\end{equation}
+where the integral along upper semicircle vanishes due to the fact, that in the limit $R \rightarrow \infty$ the function $f(s')$ vanishes faster than $1/|s'|$. Furthermore we passed the half-circle to zero. \textcolor{red}{why possible?} The real line integral we are left with can be solved using the Sokhotski-Plemelj theorem. Starting by the integral
+\begin{equation}
+\begin{split}
+	\lim_{n \to 0^+} \int_a^b \frac{f(x)}{x+i\epsilon}dx &= \lim_{\epsilon \to 0^+} \int_a^b \frac{x-i\epsilon}{(x+i\epsilon)(x-i\epsilon)} \\ 
+	 &= -i\pi \lim_{\epsilon \to 0^+} \int_a^b \frac{f(x)}{\pi (x^2 + \epsilon^2)} + \lim_{\epsilon \to 0^+} \int_a^b \frac{x^2}{x^2 + \epsilon^2} \frac{f(x)}{x} dx,
+\end{split}
+\end{equation} 
+where the first term in the second expression is the nasent delta function and therefore approaches a dirac delta function and turns into $-i\pi f(0)$. The second term of the second idendity is approches 1 for $|x| \ll \epsilon$ and 0 for $|x| \gg \epsilon$. Additionally it is totally symmetrix about 0 (which is important for the Cauchy principal value) and turns in the limit into Cauchys principal value integral given by
+\begin{equation}	
+ P \int_L f(x) dx = \lim_{\epsilon \to 0} \int_{L(\epsilon)} f(x) dx
+\end{equation}
+Consequently we get the Sokhotski-Plemelj theorem
+\begin{equation}
+	\lim_{\epsilon \to 0^+} \int_a^b \frac{f(x)}{x-i\epsilon}dx = -i\pi f(x).
+\end{equation}
+Finally we can we just have to plug in the theorem and change the formula
+\begin{equation}
+\begin{split}
+	0 &= \oint \frac{f(s')}{s'-s} ds' = P \int_{-\infty}^\infty \frac{f(s')}{s'-s} - i\pi f(s)  \\
+	\Rightarrow f(s) &= \frac{P}{i\pi} \int_{-\infty}^{\infty} \frac{f(s')}{s'-s}.
+\end{split}
+\end{equation}
+
+Remebering the definition of the spectral function $\rho(s)$ we can now express the two-point correlator $\Pi(s)$ as 
+\begin{equation}
+	\Pi(s) = \int_0^\infty \frac{\rho(s')}{s' - s -i0} ds' + P(s)
+\end{equation}
+\textcolor{red}{what happend with the Cauchy principal value (symmetry about 0?), what is P(s) (carries required scale dependence???)}
+\textcolor{red}{think about this once again, at least one more step to $\rho$ function}
+The starting point for a QCD analysis of the $e^+ e^-$ scattering is the finite energy sum rule (FESR) \textcolor{red}{cite?}
+\begin{equation}	
+	\frac{\sigma(e^+e^- \to \gamma^* \to q \bar q)}{\sigma(e^+e^- \to \mu^+ \mu^-)} \equiv R_q(s) = \int_0^{s_0} w(s) \rho(s) ds = -\frac{1}{2\pi i} \oint_{|s|=s_0} w(s) \Pi(s) ds
+\end{equation}
+\textcolor{red}{how are now 1.15 and 1.16 connected? Why can we write Rq as the integral from 0 to s0 over the w(s) times p(s)?}
+In the massless case the vector correlation function $\Pi(s)$ can be written as follows
+\begin{equation}
+	\Pi(s) = - \frac{N_c}{12\pi^2} \sum_{n=0}^{\infty} a_\mu^n \sum_{k=0}^{n+1} c_{nk} (L)^k, \qquad \text{where} \qquad L \equiv \ln \frac{-s}{\mu^2}
+\end{equation}
+and $a_\mu = a = \alpha_s / \pi$. Consequently the pertubative expansion of the Adler function $D(s)$ can be writte as
+\begin{equation}
+	D(s) = \frac{N_c}{12 \pi^2} \sum_{n=0}^{\infty} a_\mu^n \sum_{k=0}^{n+1} c_{nk} k (L)^{k-1}.
+\end{equation}
+The spectral function $\rho(s)$ and the Adler function $D(s)$ are physical quantities, so that they have to follow the homogenous renormalisation group equation (RGE)
+\begin{equation}
+\label{eq:spectralAdlerRGE}
+	-\mu \frac{d}{d\mu} \left\{\begin{matrix}D(s) \\ \rho(s) \end{matrix}\right\} = \left[2\frac{\partial}{\partial L} + \beta(a) \frac{\partial}{\partial a} \right] \left\{\begin{matrix}D(s) \\ \rho(s) \end{matrix}\right\} = 0,
+\end{equation}
+where we simply used the known form of the homogenous RGE, substitutet $\mu \to L$ and multiplied by -1. The known RGE is given by
+\begin{equation}
+\label{eq:RGE}
+	\left\{\mu \frac{\partial}{\partial \mu} - \beta(a_s) \frac{\partial}{\partial a_s} - \gamma(a_s) m\frac{\partial}{\partial m}\right\} R(q, a_s, m) = 0,
+\end{equation}
+where $R(q, a_s, m)$ represents an arbitrary physical quantity. In our case these physical quantity is represented by the Adler or the Spectral function. As we neclected the mass the partial derivative of the mass $\partial / \partial m$ vanishes. Furthermore the subsitution is given by
+\begin{equation}
+	L = \ln \frac{-s}{\mu^2} = \ln(-s) - 2 \ln(\mu) \qquad \Rightarrow \frac{\partial L}{\partial \mu} = - \frac{2}{\mu}.
+\end{equation}
+Inserting the substition in eq.~\ref{eq:RGE} and multiplying with -1 then yields eq.~\ref{eq:spectralAdlerRGE}. 
+
+In the RGE we we have used the $\beta$-function, which is defined as
+\begin{equation}
+	- \mu \frac{d a}{d\mu} \equiv \beta(a) = \beta_1 a^2 + \beta_2 a^3 + \beta_3 a^4 + \beta_4 a^5 + \cdots 
+\end{equation}
+and known numerically for $N_c=3$ in the $\bar{MS}$-scheme \textcolor{red}{cite, jamin 27} up to fourth coefficient by \textcolor{red}{cite, jamin 28-30}
+\begin{equation}
+\begin{split}
+	\beta_1 = \frac{11}{2} - \frac{1}{3} N_f, \qquad \beta_2 = \frac{51}{4}-\frac{19}{12}N_f, \qquad \beta_3 = \frac{2857}{64} - \frac{5033}{576}N_f + \frac{325}{1728} N_f^2, \\
+	\beta_4 = \frac{149753}{768} + \frac{891}{32} \zeta_3 - \left(\frac{1078361}{20736} + \frac{1627}{864}\zeta_3\right) N_f + \left(\frac{50065}{20736} + \frac{809}{1296}\zeta_3\right) N_f^2 + \frac{1093}{93312}N_f^3.
+\end{split}
+\end{equation}
+
+Now we want to have a closer look to the coefficients $c_{nk}$ used in the pertubative expansion of the Adler and the Spectral function. Obviouslu the coefficients $c_{n0}$ have to vanish in both, the Spectral function (it is purely imaginary and the coefficient is real) and the Adler function (it has a factor k), thus the $c_{n0}$ are unphysically and do not appear in measurable quantities. Furthermore the homogenous RGE (eq. \ref{spectralAdlerRGE}) puts constraints on the coefficients $c_{nk}$. Considering $c_{n1}$ to be independet all other coefficients $c_{nk}$ with $k=2, \cdots, n+1$ can be expressed with $c_{n1}$ and the $\beta$-function up to order $\alpha_s^2$. Hence the RG contraints lead to 
+\begin{align}
+c_{22} &= -\frac{\beta_1}{4}c_{11}, \qquad c_{33}=\frac{\beta_1^2}{12}c_{11}, \qquad c_{32} = -\frac{1}{4}(\beta_2 c_{11} + 2\beta_1 c_{21}), \\ \nonumber
+c_{44} &= -\frac{\beta_1^3}{32}c_{11}, c_{43} = \frac{\beta_1}{24} (5\beta_2 c_{11} + 6\beta_1c_{21}), c_{42} = - \frac{1}{4}(\beta_3 c_{11} + 2\beta_2 c_{21} + 3 \beta_1 c_{31}). 
+\end{align}
+Additionally the coefficients, $c_{n, n+1} = 0$ for $n \ge 1$. The independent coefficients $c_{n1}$ are known analytically up to order $\alpha_s^3$ \textcolor{red}{cite, jamin 31,32} ant at $N_c=3$ in the $\bar{MS}$-scheme take the following values
+\begin{flalign}
+	c_{01} &= c_{11} = 1, c_{21} = \frac{365}{24} - 11 \zeta_3 - \left(\frac{11}{12}-\frac{2}{3}\zeta_3\right)N_f,  \\ \nonumber 
+	c_{31} &= \frac{87029}{288} - \frac{1103}{4} \zeta_3 + \frac{275}{6} \zeta_5 - \left(\frac{7847}{216} = \frac{262}{9}\zeta_3 + \frac{25}{9}\zeta_5\right) N_f + \left(\frac{151}{162} - \frac{19}{27}\zeta_3\right)N_f^2.
+\end{flalign}
+\
+subsection{Theory equals Experiment}
+\begin{equation}
+	\begin{split}
+		\int_{C_2} \diff s \Pi(s) &= -\int_{C_1} \diff s \Pi(s) \\
+		&= -\int_{0+i\epsilon}^{s_0 + i\epsilon} \Pi(s) \diff s - \int_{0 - i\epsilon}^{s_0 - i\epsilon} \Pi(s) \diff s \\
+		&= -\int_{0}^{s_0} \Pi(s'+i\epsilon)\diff s' - \int_0^{s_0} \Pi(s'-i\epsilon) \diff s' \\
+		&= -\int_0^{s_0} (\Pi(s' + i\epsilon) - \Pi*(s'+i\epsilon) )\diff s' \\
+		&= -\int_0^{s_0} 2 i \Im \Pi(s' +i\epsilon)
+	\end{split}
+\end{equation}
+\begin{equation}
+	-\int_0^{s_0} 2 \Im \Pi(s) \diff s = \oint_{|s|=s_0} \Pi(s) \diff s
+\end{equation}
+\begin{equation}
+	-\int_0^{s_0} \rho_{exp}(s) = -\frac{1}{2\pi i} \oint_{|s|=s_0} \Pi(s) \diff s
+\end{equation}
+
+\subsection{Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}
+Remember the definition of the \textbf{Adler function}:
+\begin{equation}
+	D \equiv - s \frac{\diff}{\diff s} \Pi(s).
+\end{equation}
+Having a look at the \textbf{Fundamental theorem of calculus} we can write for a path $\gamma:[0,1]\to\mathbb{C}$
+\begin{equation}
+	\int_\gamma f(z) \diff z = F(z_1) - F(z_0) \quad \text{or} \quad f(\gamma(1)) - f(\gamma(0)) = \int_\gamma f'(z) \diff z.
+\end{equation}
+Using the definition of the contour integration
+\begin{equation}
+	\int_\gamma f(z) \diff z = \int_0^1 f(\gamma(t)) \gamma'(t) \diff t = \int_0^1 (f \circ \gamma)'(t) \diff t
+\end{equation}
+the \textbf{complex integration by parts} is given by
+\begin{equation}
+	\begin{split}
+		\int_{\gamma} f'(z) g(z) \diff z &= \int_{0}^{1} f'(\gamma(t)) g(\gamma(t)) \gamma'(t) \diff t \\
+		&= \int_{0}^1 (f \circ \gamma)'(t) (g\circ\gamma)(t) \diff t \\
+		&= \left[(f\circ\gamma)(t) (g\circ\gamma)(t) \right]_0^1 - \int_0^1 (f\circ\gamma)(t)(g\circ\gamma)'(t)\diff t \\
+		&= -\int_0^1 f(\gamma(t))g'(\gamma(t))
+	\end{split}
+\end{equation}
+for a closed path (the boundary term vanished for same start and end point).
+Applying \textbf{complex integration by parts} let's us substitute the \textbf{Two-Point function} by the \textbf{Adler function}
+\begin{equation}
+	\oint_{|s|=s_0} w(s) \Pi(s) = -\oint_{|s|=s_0} \hat w(s) \frac{\diff \Pi(s)}{\diff s} = \oint_{|s|=s_0} \frac{\hat w(s)}{s} D(s).
+\end{equation}
+
+
+
+
+\subsection{Pearson's $\chi^2$ test}
+\begin{equation}
+	\chi^2 (\alpha) = [I_i^{exp} - I_i^{th}(\alpha)] C_{ij}^{-1} [I_j^{exp} - I_j^{th}(\alpha)]
+\end{equation}
+with 
+\begin{equation}
+	\begin{split}
+		I^{exp}_i &= -\int_0^{s_0} \rho_{exp}(s) \diff s \\
+		I^{th}_i(\alpha) &= \oint_{|s|=s_0} \Pi(s) \diff s \\
+		C &= 
+		\begin{pmatrix} 
+			\sigma_1^2 & \rho_{12}\sigma_1\sigma2 & \rho_{13}\sigma_1\sigma_3 & \cdots \\
+			\rho_{21}\sigma_1\sigma_2 & \sigma_2^2 & \rho_{23}\sigma_2\sigma_3 & \cdots \\
+			\rho_{31}\sigma_1\sigma2 & \rho_{32}\sigma_2\sigma_3 & \sigma_3^2 & \cdots \\
+			\vdots & \vdots & \vdots & \ddots		
+		\end{pmatrix}
+	\end{split}
+\end{equation}
+
+  
+
+\section{Adler function Contributions}
+\begin{gather}
+	\beta_1 = \frac{11}{2} - \frac{1}{3} N_f,  \quad \beta_2 = \frac{51}{4} - \frac{19}{12} N_f, \quad \beta_3 = \frac{2857}{64} - \frac{5033}{576}N_f + \frac{325}{1728} N_f^2, \\
+	\beta_4 = \frac{149753}{768} + \frac{891}{32} \zeta_3 - \left(\frac{1078361}{20736} + \frac{1627}{864} \zeta_3\right) N_f + \left(\frac{50065}{20736} + \frac{809}{1296} \zeta_3 \right) N_f^2 + \frac{1093}{93312} N_f^3
+\end{gather}
+\subsection{Dimension Zero}
+\begin{equation}
+	D(s) = \frac{1}{4 \pi^2} \sum_{n=0} \tilde K_n (\mu) a^n (- \mu s^2)
+\end{equation}
+\begin{gather}
+	\tilde K_0 (\mu) = K_0, \quad \tilde K_1 (\mu) = K_1, \quad \tilde K_2 (\mu) = K_2 - \beta_1 K_1 \ln (\mu) \\
+	\tilde K_3 (\mu) = K_3 -[\beta_2 K_1 + 2 \beta_1 K_2] \ln \mu + \beta_1^2 K_1 \ln^2 \mu
+\end{gather}
+\begin{equation}
+	K_0 = K_1 = 1,  \quad K_2 = \frac{295}{24} - 9 \zeta_3, \quad K_3 = \frac{58057}{288} - \frac{779}{4} \zeta_3 - \frac{75}{2} \zeta_5
+\end{equation}
+
+
+
+
+\appendix
+\include{./tex/appendix}
+
+% Bibliography:
+\bibliographystyle{plain}
+\bibliography{references} 
+
+\end{document}
+
+

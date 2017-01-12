@@ -1,0 +1,578 @@
+
+\section{Non-degenerated Time Independent Perturbation Theory}
+Let $E^{(0)}$ and $| n^{(0)} \rangle$ be the known eigenvalue and eigenvector of
+\begin{equation}
+	H^{(0)} | n^{(0)} \rangle = E_n^{(0)} | n^{(0)} \rangle.
+\end{equation}
+Introducing a small correction (perturbation) $V$ we want to find the approximated solution of 
+\begin{equation}
+	\label{perturbedSchroedinger}
+	(H^{(0)} +  \lambda V)| n \rangle = E_n | n \rangle,
+\end{equation}
+where we introduced $\lambda \in [0, 1]$ to keep track of the strength of the perturbation:
+\begin{align}
+	\lambda &= 0 \quad \to \quad \text{unperturbed case} \\
+	\lambda &= 1 \quad \to \quad \text{perturbed case}.
+\end{align}
+By defining the so-called energy shift
+\begin{equation}
+	\Delta_n \equiv E_n - E_n^{(0)}
+\end{equation}
+we can write
+\begin{equation}
+	(E_n^{(0)} - H^{(0)}) | n \rangle = ( \Delta_n + E_n^{(0)}) | n \rangle.
+\end{equation}
+For finding a solution we want to invert $(E_n^{(0)} - H^{(0)})$ which is in general not always well defined
+\begin{equation} 
+	\frac{1}{E_n^{(0)} - H^{(0)})} | n^{(0)} \rangle = \frac{1}{0} | n^{(0)} \rangle, 
+\end{equation}
+thus we define the complementary projector
+\begin{equation}
+	\phi_n \equiv 1 - | n^{(0)} \rangle \langle n^{(0)} | =  \sum_{k \neq n} | k^{(0)} \rangle \langle k^{(0)} |.
+\end{equation}
+Multiplicating the complementary projector from the left side yields
+\begin{equation}
+	| n \rangle = \frac{\phi_n (\lambda V - \Delta_n ) }{E_n^{(0)} - H^{(0)}} | n\rangle, 
+\end{equation}
+where we used 
+\begin{align}
+	&\phi_n (\lambda V - \Delta_n ) | n \rangle = (\lambda V - \Delta_n) | n \rangle, \\
+	\text{because:} \quad &\langle n^{(0)} | E_n^{(0)} - H^{(0)} | n \rangle = \langle n^{(0)} \lambda V - \Delta_n | n \rangle = 0.
+\end{align}
+In the limit $\lambda \to 1$ this result turns out to be zero so we'll add $c_n(\lambda) | n^{(0)} \rangle$ to $| n \rangle$
+\begin{equation}
+	| n \rangle = c_n(\lambda) | n^{(0)} + \frac{\phi_n (\lambda V - \Delta_n ) }{E_n^{(0)} - H^{(0)}} | n\rangle.
+\end{equation}
+We can do this, because $c_n(\lambda) | n^{(0)} \rangle$ is like adding a zero term
+\begin{equation}
+	(E_n^{(0)} - H^{(0)}) | n^{(0)} \rangle = 0.
+\end{equation}
+Furthermore regarding the limit and defining a new normalization (for convenience) gives us
+\begin{equation}
+	\lim_{\lambda \to 0} c_n(\lambda) = 1, \quad c_n(\lambda) = \langle n^{(0)} | n \rangle = 1
+\end{equation}
+and thus the eigenkets and the energy shift are given as
+\begin{align}
+	\label{schroedingerEigenket}
+	&| n \rangle = |  n^{(0)}\rangle + \frac{\phi_n (\lambda V - \Delta_n ) }{E_n^{(0)} - H^{(0)}} | n\rangle \\
+	&\Delta_n = \lambda \langle n^{(0)} | V | n \rangle, \quad \text{because:} \langle n^{(0)} | \lambda V - \Delta_n | n \rangle = 0.
+\end{align}
+Expanding in terms of $\lambda$ yields
+\begin{align}
+	|n\rangle &= |n^{(0)} \rangle + \lambda |n^{(1)} \rangle + \lambda^2 |n^{(2)} \rangle + \cdots \\
+	\Delta_n &= \lambda \Delta_n^{(1)} + \lambda^2 \Delta_n^{(2)} + \cdots
+\end{align}
+So by comparing $\lambda$ order by order we get for the energy shift
+\begin{align}
+	\mathcal{O}(\lambda^1): \qquad \Delta_n^{(1)} &= \langle n^{(0)} | V | n^{(0)} \rangle \\
+	\mathcal{O}(\lambda^2): \qquad \Delta_n^{(2)} &= \langle n^{(0)} | V | n^{(1)} \rangle \\
+	& \vdots \\
+	\mathcal{O}(\lambda^N): \qquad \Delta_n^{(1)} &= \langle n^{(0)} | V | n^{(N-1)} \rangle
+\end{align}.
+Thus finding the eigenkets $|n^{(N-1)}\rangle$ is neccesary for calculating the energy perturbations
+\begin{align}
+	| n \rangle &= |  n^{(0)} + \frac{\phi_n (\lambda V - \Delta_n ) }{E_n^{(0)} - H^{(0)}} | n\rangle \\
+			&= |n^{(0)} \rangle + \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} ( \lambda V - \lambda \Delta_n^{(1)} - \lambda^2 \Delta_n^{(2)} - \cdots) \times ( |n^{(0)} \rangle + \lambda | n^{(1)} \rangle + \cdots ), 
+\end{align}
+where we expanded both sides of \ref{schroedingerEigenket}. This being done we can now compare each order of lamba. Starting with the first order eigenket
+\begin{align}
+	\mathcal{O}(\lambda^1): \qquad &|n^{(1)}\rangle = \frac{\phi_n}{E_n^{(0)} + H_n^{(0)}} (V - \Delta_n^{(1)} ) | n^{(0)} \rangle, \\
+	\text{because} \quad &\phi_n \Delta_n^{(1)} | n^{(0)} \rangle = 0.
+\end{align}
+With this in mind we easily get the expression for 
+\begin{equation}
+	\Delta_n^{(2)} = \langle n^{(0)} | V | n^{(1)} \rangle = \langle n^{(0)} | V \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} V | n^{(0)} \rangle,
+\end{equation}
+with which we can calculate the following order in $|n\rangle$
+\begin{align}
+	\mathcal{O}(\lambda^2) |n^{(2)} \rangle &= \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} (V | n^{(1)} \rangle - \Delta_n^{(1)} | n^{(1)} \rangle - \underbrace{\Delta_n^{(2)} | n^{(0)} \rangle}_{0} ) \\
+	&= \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} V \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} | n^{(0)}\rangle \\
+	&- \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} \langle n^{(0)}|V|n^{(0)}\rangle \frac{\phi_n}{E_n^{(0)} - H_n^{(0)}} V | n^{(0)}\rangle
+\end{align}
+and so on and so forth. By defining
+\begin{equation}
+	V_{nk} = \langle n^{(0)}|V|k^{(0)}\rangle
+\end{equation}
+we can sum up the final result of non-degenerated time-independent PT as
+\begin{align}
+	\Delta_n &= E_n - E_n^{(0)} \\
+	&= \lambda \Delta^{(1)} + \lambda^2 \Delta^{(2)} + \cdots \\
+	&= \lambda V_{nn} + \lambda^2 \sum_{k \neq n} \frac{|V_{nk}|^2}{E_n^{(0)} - E_k^{(0)}} + \cdots \\
+	|n\rangle &= |n^{(0)}\rangle + \lambda |n^{(1)}\rangle + \lambda^2|n^{(2)}\rangle + \cdots \\
+	&= |n^{(0)}\rangle + \lambda \sum_{k\neq n} \frac{|k^{(0)}\rangle V_{kn}}{E_n^{(0)}-E_k^{(0)}} \\
+	&+ \lambda^2 \left( \sum_{k\neq n}\sum_{l\neq n} \frac{|k^{(0)}\rangle V_{kl}V_{ln}}{(E_n^{(0)}-E_k^{(0)})(E_n^{(0)}-E_l^{(0)})} - \sum_{k\neq n} \frac{V_{nn}V_{kk}}{(E_n^{(0)} - E_k^{(0)})^2} \right).
+\end{align}
+
+
+
+\section{Feynman Propagator}
+In this section we want to derive the Feynman propagator for scalors $\Pi(p)$ defined as the Greens function within the time ordered product of two scalar fields $\phi(x)$ and $\phi(y)$
+\begin{equation}
+	\langle 0 | T \{ \phi(x) \phi(y) \} | 0 \rangle = \int \frac{d^4}{(2\pi)^4} \exp^{i p (x-y)} \Pi(p).
+\end{equation}
+The general approach for getting an expression for the free propagator will be to calculate the time ordered product of the two free fields and compare the result with the above definition. 
+As starting point we will use the free scalar field
+\begin{equation}
+	\phi_0(\vec x, t) = \int \frac{d^3 k}{(2\pi)^3} \frac{1}{\sqrt{2 w_k}} (a_k \exp^{i \vec k \vec x} + a_k^\dagger \exp^{-\vec k \vec x} )
+\end{equation},
+where $\omega_k = k_0 = \sqrt{m^2 + \vec k^2}$. Thus forming the free field non time ordered product we get
+\begin{equation}
+	\langle 0 | \phi(x_1) \phi(x_2) | 0 \rangle = \int \frac{d^3 k_1}{(2\pi)^3} \int \frac{d^3 k_2}{(2\pi)^3} \frac{1}{\sqrt{\omega_{k_1}}}\frac{1}{\sqrt{\omega_{k_2}}}  e^{i(k_1 x_1-  k_2 x_2)} \langle 0 | (a_{k_1}  a_{k_2}^\dagger | 0 \rangle
+\end{equation}, where the the missing ladder operator summands within the vacuum are zero. The momentum of the created particle needs to be annihilated at a later time. Consequently the product of the annihilation and creation operator within the vacuum gives us
+\begin{equation}
+	\langle 0 | (a_{k_1}  a_{k_2}^\dagger | 0 \rangle = \delta^3(k_1 - k_2)
+\end{equation},
+so we can evaluate one of the two integrals
+\begin{align}
+	\langle 0 | \phi(x_1) \phi(x_2) | 0 \rangle &= \int \frac{d^3 k_1}{(2\pi)^3} \int \frac{d^3 k_2}{(2\pi)^3} \frac{1}{\sqrt{\omega_{k_1}}}\frac{1}{\sqrt{\omega_{k_2}}}  e^{i(k_1 x_1-  k_2 x_2)}  \delta^3(k_1 - k_2)  \\
+	&= \int \frac{d^3 k}{(2\pi)^3} \frac{1}{2\omega_k} e^{i k(x_1-x_2)}
+\end{align}.
+Now we can write the time ordered field products as product of the Heaviside-function $\Theta(x)$
+\begin{align}
+	\langle 0 | T\{\phi(x_1) \phi(x_2) \} | 0 \rangle &= \int \frac{d^3 k}{(2\pi)^3} \frac{1}{2 \omega_k} [ e^{ik(x_1 - x_2)}\Theta(t_1-t_2) + e^{ik(x_2-x_1)} \Theta(t_2 - t_1)]  \\
+	&= \int \frac{d^3 k}{(2\pi)^3} \frac{1}{2 \omega_k} [ e^{i\vec k (\vec x_1-\vec x_2)}e^{-i \omega_k \tau} \Theta(\tau) + e^{i\vec k ( \vec x_1 - \vec x_2)} e^{i \omega_k \tau} \Theta(- \tau)]  \\
+	&= \int \frac{d^3 k}{(2\pi)^3} \frac{1}{2 \omega_k}  e^{-i\vec k (\vec x_1-\vec x_2)}[e^{-i \omega_k \tau} \Theta(\tau) + e^{i \omega_k \tau} \Theta(- \tau)]  
+\end{align},
+where we subsituted $\tau = t_1 - t_2$ in the second line and $k \to -k$ in the third line.
+The time dependent Heaviside-functions can be rewritten with two contour integrals
+\begin{equation}
+	e^{-i \omega_k \tau} \Theta(\tau) + e^{i \omega_k \tau} \Theta(- \tau) = \lim_{\epsilon \to 0} \frac{- 2 \omega_k}{2\pi i} \int_{-\infty}^{\infty} \frac{d \omega}{\omega^2 - \omega_k^2 + i \epsilon} e^{i \omega \tau},
+\end{equation}
+which we will check now.
+To derive this identity we first separate out the poles with partial fractions
+\begin{align}
+	\frac{1}{\omega^2 - \omega_k^2 + i\epsilon} &= \frac{1}{\omega - (\omega_k - i\epsilon)} \frac{1}{(\omega - (-\omega_k + i\epsilon)} \\
+	&= \frac{1}{2 \omega_k}  \left [\frac{1}{\omega - (\omega_k - i\epsilon)} - \frac{1}{\omega - (\omega_k + i\epsilon)}  \right ].
+\end{align}
+Applying the Residue theorem
+\begin{equation}
+	\oint_C f(z) dz = \int_{-a}^{a} f(z) dz  + \int_{arc} f(z) dz = 2 \pi i \sum_{k=1}^n I(C, a_k) Res(f, a_k),
+\end{equation}
+(check wiki for details). Our line integral has two residuum
+\begin{equation}
+	\underset{\omega = \omega_k + i\epsilon}{Res} (f(\omega)) = e^{i \omega_k \tau}, \qquad \underset{\omega = -\omega_k - i\epsilon}{Res} (f(\omega)) =   e^{-i \omega_k \tau}
+\end{equation}
+yielding
+\begin{align}
+	\lim_{\epsilon \to 0} \frac{- 2 \omega_k}{2\pi i} \int_{-\infty}^{\infty} \frac{d \omega}{\omega^2 - \omega_k^2 + i \epsilon} e^{i \omega \tau} &= - \frac{2 \omega_k}{2 \pi i} \frac{1}{2 \omega_k} \int_{-\infty}^{\infty} \left[ \frac{d\omega e^{i\omega \tau}}{\omega - (\omega_k - i\epsilon)} + \frac{d \omega e^{i\omega\tau}}{\omega - (\omega + i\epsilon)} \right] \\
+	&=  e^{-i\omega_k \tau} \Theta(\tau) + e^{i \omega_k \tau} \Theta(\tau). \qquad \square
+\end{align}
+So finally we have for the Feynman propagator
+\begin{align}
+	\langle 0 | T \{ \phi(x_1) \phi(x_2) \} | 0 \rangle &= \int \frac{d^3}{(2\pi)^3} \frac{1}{\omega_k} e^{i \vec k(\vec x_1 \vec x_2)} \left[ \frac{-2 \omega_k}{2 \pi i} \int \frac{d\omega}{\omega^2 - \omega_k + i\epsilon} e^{i\omega \tau} \right] \\
+	&= \int\int \frac{d^3k d\omega}{(2 \pi)^4} \frac{i}{\omega^2 - \omega_k^2 + i\epsilon} e^{i [\vec k (\vec x_1 - \vec x_2) + \omega \tau]} \\
+	&= \int \frac{d^4 k}{(2\pi)^4}\frac{i}{w^2 - m^2 - k^2 + i\epsilon} e^{ik(x_1 - x_2)} \\
+	&= \int \frac{d^4 k}{(2\pi)^4} \frac{i}{k^2 - m^2 + i\epsilon} e^{ik (x_1 - x_2)}
+\end{align}
+
+\section{Photon Propagator}\label{sec:photonPropagator}
+In this section we will derive the Photon propagator
+\begin{equation}
+	\langle 0 | T\{ A^\mu (x) A^\nu (y) \} | 0 \rangle = i \int \frac{d^4 p}{(2 \pi)^4} e^{ip(x-y)} \Pi^{\mu\nu}(p).
+\end{equation}
+Starting by the Maxwell Lagrangian
+\begin{equation}
+	\mathcal{L} = - \frac{1}{4} F_{\mu\nu}^2 - A_\mu J_\mu, \quad \text{with} \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu,
+\end{equation}
+we can apply the Euler-Lagrange equation
+\begin{align}
+	\frac{\partial \mathcal{L}}{\partial A_\alpha} - \partial_\beta \frac{\partial \mathcal{L}}{\partial(\partial_\beta A_\alpha)} &= -J_\alpha + \frac{2}{4} \partial_\beta [(\delta_\beta^\mu \delta_\alpha^\nu - \delta_\beta^\nu \delta_\alpha^\mu) (\partial_\mu A_\nu - \partial_\nu A_\mu) ] \\
+	&= -J_\alpha + \frac{1}{2} \partial_\beta \underbrace{(\partial_\beta A_\alpha - \partial_\alpha A_\beta - \partial_\alpha A_\beta + \partial_\beta A_\alpha)}_{2F_{\beta\alpha}} \\
+	\Rightarrow \partial_\mu F_{\mu\nu} &= \partial_\mu(\partial_\nu A_\nu - \partial_\nu A_\mu) =  J_\nu
+\end{align}
+or in momentum Space
+\begin{equation}
+	(-k^2 g_{\mu\nu} + k_\mu k_\nu) A_\mu = J_\nu.
+\end{equation}
+We would like to write $A_\mu = \Pi_{\mu\nu} J_\nu$, meaning that we have to invert $(-p^2 g_{\mu\nu} + p_\mu p_\nu)$, which has determinant zero and is therefore not invertible. Consequently we have to add another field, that acts like a Lagrangian multiplier 
+\begin{equation}
+	\mathcal{L} = - \frac{1}{4} F_{\mu\nu}^2 - \frac{1}{2 \xi} (\partial_\mu A_\mu)^2 - J_\mu A_\mu.
+\end{equation}
+With the help of the equation of motion
+\begin{equation}
+	\left[ -p^2 g_{\mu\nu} + \left(1 - \frac{1}{\xi} \right) p_\mu p_\nu \right] A_\nu = J_\mu 
+\end{equation}
+we get the final form of the photon propagator by inverting the term in the squared brackets
+\begin{equation}
+	\Pi_{\mu\nu} = - \frac{g_{\mu\nu} -(1-\xi) \frac{p_\mu p_\nu}{p^2}}{p^2}.
+\end{equation}
+To check, we calculate
+\begin{align}
+	\text{stuff missing}
+\end{align}
+\begin{equation}
+	i \Pi^{\mu\nu} (p) = \frac{-i}{p^2 + i \epsilon} \left[ g^{\mu\nu} - (1 - \xi) \frac{p^\mu p^\nu}{p^2} \right]
+\end{equation}
+
+\section{Path Integral}
+\begin{equation}
+	\langle \Omega | T \{ \phi(x_1) \cdots \phi(x_n) \} | \Omega \rangle = \frac{ \int \mathcal{D} \phi \phi(x_1) \cdots \phi_(x_n) e^{i S[\phi]}}{\int \mathcal{D} \phi e^{iS[\phi]}}
+\end{equation}
+\subsection{Gaussian Integral}
+\begin{align}
+	I &= \int^\infty_{-\infty} dp e^{-\frac{1}{2} ap^2 + J p}\\
+	 &= \int^\infty_{-\infty} dp e^{-\frac{1}{2} a\left(p - \frac{J}{a} \right)^2 + \frac{J^2}{2a}} \\
+	&\overset{p\to J/a}{=} e^{\frac{J^2}{2a}} \int^\infty_{-\infty} dp e^{-\frac{1}{2} ap^2} \\
+	& \overset{p\to p/\sqrt{a}}{=} \frac{1}{\sqrt{a}} e^{\frac{J^2}{2a}} \int^\infty_{-\infty} dp e^{-\frac{1}{2} p^2} \\
+	& = \frac{2 \pi}{\sqrt{a}} e^{\frac{J^2}{2a}}
+\end{align}
+So for one dimension we have
+\begin{equation}
+	\int_{-\infty}^\infty dp e^{-\frac{1}{2} a p^2 + \frac{J^2}{2a}} = e^{\frac{J^2}{2a}} \sqrt{\frac{2\pi}{a}}
+\end{equation}
+or a multi-dimensional integral we have to substitute
+\begin{equation}
+	-\frac{1}{2} a p^2 \to -\frac{1}{2} p_i a_{ij} p_j = -\frac{1}{2} \vec p^\mathbf{T} A \vec p
+\end{equation}
+yielding
+
+
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+\label{gaussianIntegral}
+   \int_{-\infty}^\infty dp e^{- \frac{1}{2} \vec p^\mathbf{T} A \vec p + \vec J^\mathbf{T} \vec p = \sqrt{\frac{2\pi}{a}} e^{\frac{1}{2} J^\mathbf{T}A^{-1} J}}
+\end{empheq}
+
+\subsection{Path Integral in Quantum Mechanics}
+In one dimensional, non relativistic Quantum Mechanics given the Hamiltonian
+\begin{equation}
+	\hat H(t) = \frac{\hat p^2}{2m} + V(\hat x, t),
+\end{equation}
+where $\hat H$, $\hat x$ and $\hat x$ represent operators we want to project the initial state
+\begin{equation}
+	| i \rangle = | x_i \rangle \quad \text{(localized at point $x_i$ and time $t_i$)}
+\end{equation}
+on to the final state
+\begin{equation}
+	| f \rangle = | x_f \rangle \quad \text{(localized at point $x_f$ and time $t_f$)}.
+\end{equation}
+If $\hat H$ is time independent we can simply solve the matrix elements as
+\begin{equation}
+	\langle f | i \rangle = \langle x_f | e^{-i (t_f - t_i) \hat H} | x_i \rangle,
+\end{equation}
+whereas if $\hat H(t)$ is a smooth function of time we will break down the exponential into $n$ time regions $\delta t$, with $t_f = t_n$, and $t_j = t_i + j \delta t$. Thus we can write
+\begin{equation}
+	\langle i | f \rangle = \int dx_1 \cdots dx_n \langle x_f | e^{-i H(t_f) \delta t} | x_f \rangle \langle x_f | \cdots | x_2 \rangle \langle x_2 | e^{-i H(t_2) \delta t} | x_1 \rangle \langle x_1 | e^{-i H(t_1)} | x_i \rangle.
+\end{equation}
+So to get the the final state we have to evaluate $n$ terms of
+\begin{equation}
+	\langle x_{j+1} | e^{-i H(t_{j+1}) \delta t} | x_j \rangle = \int dp \langle x_{j+1} | e^{-i H(t_{j+1}) \delta t} | p \rangle \langle p | x_j \rangle 
+\end{equation},
+having a short look on oldschool Quantum mechanics we remember
+\begin{equation}
+	\langle x | \hat p | p \rangle \quad \Rightarrow \quad p \langle x | \rangle = - i \langle x | \frac{\partial}{\partial x} | p \rangle 
+\end{equation}
+and thus
+\begin{equation}
+	\langle x | p \rangle = N e^{i p x} \quad \text{and} \quad \langle p | x \rangle = N e^{-i px}, 
+\end{equation}
+where $N$ is the normalization constant. Consequently we have
+\begin{align}
+	\langle x_{j+1} | e^{-i H \delta t} | x_j \rangle &= \int dp \langle x_{j+1} | p \rangle \langle p | e^{-i \left[\frac{\hat p^2}{2m} + V(\hat x_j, t_j) \right] \delta t}  | x_j \rangle  \\
+	&= N \int dp e^{-i \left[\frac{p^2}{2m} + V(x_j, t_j)  \right] \delta t} e^{i p x_{j+1}} \langle p  | x_j \rangle  \\
+	&= N \int dp e^{-i \left[\frac{p^2}{2m} + V\right] \delta t} e^{ip x_{j+1}} e^{-i p x_j}  \\
+	&= N e^{-i V \delta t} \int dp e^{-i \left[\frac{p^2_{j+1}}{2m} \right] \delta t} e^{p (x_{j+1} - x_{j})} 
+\end{align}
+where we can now use the former derived Gaussian integral \ref{gaussianIntegral}, with $a = i \delta t/ m$ and $J = i(x_{j+1} - x_j)$
+\begin{equation}
+	\langle x_{j+1} | e^{-i H \delta t} | x_j \rangle = N e^{-i \frac{m}{2} \left[ (\frac{x_{j+1} - x_j}{\delta t})^2 - V  \right] \delta t} = N e^{-i \mathcal{L}(x_j, \dot x_j) \delta t},
+\end{equation}
+where we have hidden the $\pi$ and $a$ factors from the Gaussian integral in the normalization constant $N$,  which will cancel out in a later step. Thus we are left with 
+\begin{equation}
+	\langle f | \rangle i \rangle = N^n \int dx_1 \cdots x_n e^{-i \mathcal{L}(x_n, \dot x_n)} \cdots e^{-i \mathcal{L}(x_i, \dot x_i)}.
+\end{equation}
+Shrinking $\delta \to 0$ we get a continious summation of the exponetials, meaning an integral over t. The integral turns out to be the action
+\begin{equation}
+	S[x] = \int dt \mathcal{L}(x, \dot x).
+\end{equation}
+So for the path-integral in quantum mechanics we have
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+\label{gaussianIntegral}
+   \langle f | i \rangle = N \int_{x(t_i) = x_i}^{x(t_f) = x_f} \mathcal{D} x(t) e^{iS[x]},
+\end{empheq}
+where $\mathcal{D} x$ means sum over all paths $x(t)$. 
+
+\subsection{Path integral in quantum field theory}
+The path integral derivation in quantum field theory is pretty similar to the preceding one in quantum mechanics. But instead of position kets $|x\rangle$ and momentum kets $|p \rangle$ we have to deal with fields and their canonical conjugates
+\begin{align}
+	\hat \phi (\vec x) &= \int \frac{d^3 p}{(2 \pi)^3} \frac{1}{\sqrt{2 \omega_p}} (a_p e^{i \vec p \vec x} + a_p^\dagger e^{-i \vec p \vec x} ), \\
+	\hat \pi (\vec x) &= -i \int \frac{d^3 p}{(2\pi^3} \sqrt{\frac{\omega_p}{2}} ( a_p e^{i\vec p \vec x} - a^\dagger_p e^{- \vec p \vec x} ).
+\end{align}
+The eigenstates of these operators will be given by
+\begin{align}
+	\hat \phi (\vec x) | \Phi \rangle &= \Phi(\vec x) | \Phi \rangle \\
+	\hat \pi (\vec x) | \Pi \rangle &= \Pi ( \vec x) | \Pi \rangle
+\end{align}
+and the Hamitlonian-density by
+\begin{equation}
+	\mathcal{H} = \frac{1}{2} \hat \pi^2 + \mathcal{V}(\hat \phi).
+\end{equation}
+No we can, as before, calculate the transition from the initial state $| 0; t_i \rangle$ into the final state $|0; t_f \rangle$ by expanding in forms of $\delta t$
+\begin{equation}
+	\langle 0; t_f | 0; t_i \rangle = \int \mathcal{D} \Phi_1 (x) \dots \mathcal{D} \Phi_n (x) \langle 0 | e^{-i \delta t \hat H (t_n)}| \Phi_n \rangle \langle \Phi_n | \dots | \Phi_1 \rangle \langle \Phi_1 | e^{-i \delta t \hat H(t_0)} | 0 \rangle.
+\end{equation}
+Each of these pieces becomes
+\begin{align}
+	\langle \Phi_{j+1} | e^{-i \delta t \hat H(t_j)} | \Phi_j \rangle &= \int \mathcal{D} \Pi_j \langle \Phi_{j+1} | \Pi_{j} \rangle \langle \Pi_j | \exp \left[ -i \delta t \int d^3 x \left( \frac{1}{2} \hat \pi^2 + \mathcal{V} (\hat \phi) \right) \right] | \Phi_j \rangle \\
+	&= \int \mathcal{D} \Pi_j \exp\left(i \int d^3 x \Pi_j(\vec x) [ \Phi_{j+1} (\vec x) - \Phi_j (\vec x) ] \right) \\
+	&\qquad \times \exp \left ( -i \delta t \int d^3 x \left( \frac{1}{2} \Pi_j^2 (\vec x) + \mathcal(V) (\Phi_j) \right) \right) \\
+	&= N \exp \left (- i \delta t \int d^3 x \left[ \mathcal{V} [\Phi_j] - \frac{1}{2} \left( \frac{\Phi_{j+1} (\vec x) - \Phi_j (\vec x)}{\delta t} \right)^2 \right] \right) \\
+	&= N \exp \left( i \delta t \int d^3 x \mathcal{L} [ \Phi_j, \partial_t \Phi_j] \right) \\
+\end{align}
+Collapsing all the pieces then yields
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	\langle 0; t_f | 0; t_i \rangle = N \int \mathcal{D} \Phi (\vec x, t) e^{iS[\Phi]}
+\end{empheq}
+
+\subsection{Time ordered products}
+Adding fields to the before obtained path-integral will show us that the necessary time is contained in the procedure of path-integrals
+\begin{equation}
+	\mathcal{I} = \int \mathcal{D} \Phi e^{i S[\Phi]} \Phi (\vec x_j, t_j)
+\end{equation}
+Remembering the derivation of the path-integral and defining
+\begin{equation}
+	\Phi(\vec x_j, t_j) \equiv \Phi_j(\vec x_j),
+\end{equation}
+where the j in $\Phi_j$ describes its point in time, we can easily extract the added field in form of an operator
+\begin{equation}
+	\int \mathcal{D} \Phi_j (\vec x) \{ e^{-i H(t_j) \delta t } | \Phi_j \rangle \Phi_j (\vec x) \langle \Phi_j |  \} = \hat \phi (\vec x_j) \int \mathcal{D} \Phi_j(\vec x) e^{-i H(t_j) \delta t} | \Phi_j \rangle \langle \Phi_j | .
+\end{equation}
+In total we get for adding one field to the path-integral
+\begin{equation}
+	N \int \mathcal{D} \Phi(\vec x, t) e^{i S[\Phi]} \Phi(\vec x_j, t_j) = \hat \phi(\vec x_j, t_j) \int \mathcal{D} \Phi(\vec x, t) e^{-i S[\Phi]} = \langle 0 | \hat \phi(\vec x_j, t_j) | 0 \rangle.
+\end{equation}
+Adding two fields we can easily check that we get time ordering for free. The earlier field will always come out on the right of the later field
+\begin{equation}
+	N \int \mathcal{D} \Phi e^{-i S[\Phi]} \Phi(\vec x_1) \Phi(\vec x_2) = \langle 0 | \hat \phi (x_1) \hat \phi(x_2) | 0 \rangle.
+\end{equation}
+In general we have
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	N \int \mathcal{D} \Phi e^{-i S[\Phi]} \Phi(\vec x_1) \dots \Phi(\vec x_n, t_n) = \langle 0 | \hat \phi (x_1)  \dots \hat \phi(x_2) | 0 \rangle.
+\end{empheq}
+
+\subsection{Vacuum for interactions}
+Until now our vacuum had a zero eigenstate $| 0 \rangle$, but with interactions the vacuum will change into eigenstates of the form $| \Omega \rangle$. Consequently we have to normalize the interaction vaccum
+\begin{equation}
+	\langle \Omega | \Omega \rangle = 1
+\end{equation}
+leading to
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	\langle \Omega | \hat \phi(x_1) \hat \phi(x_2) | \Omega \rangle = \frac{\int \mathcal{D} \Phi(x) e^{iS[\Phi]} \Phi(x_1) \Phi(x_2)}{\int \mathcal{D} \Phi(x) e^{i S[\Phi]}}
+\end{empheq}
+
+\subsection{Generating Functional}
+There is a great way of calculating path integrals by using currents. Let the action be in a presence of a classical source $J(x)$, then we will see that we can define a functional
+\begin{equation}
+	Z[J] = \int \mathcal{D} \Phi \exp[i S[\Phi] + i \int \Diff4 x J(x) \phi(x)],
+\end{equation}
+that contains all the information needed to calculate the path integral. Furthermore for $J=0$ we get the normal path integral
+\begin{equation}
+	Z[0] = \int \mathcal{D} \Phi \exp(i S[\Phi]).
+\end{equation}
+Equivalent to 
+\begin{equation}
+	\frac{\partial x_j}{\partial x_i} = \delta_{ij} \quad \text{and} \quad \frac{\partial}{\partial x_i} \sum_j x_j k_j = k_i
+\end{equation}
+we can define
+\begin{equation}
+	\frac{\partial J(x)}{\partial J(y)} = \delta^4 (x-y) \quad \text{and} \frac{\partial}{\partial J(y)} \int \Diff4x J(x) \phi(x) = \phi(y).
+\end{equation}
+Thus
+\begin{equation}
+	-i \left.\frac{\partial Z[J]}{\partial J(x_1)} \right|_{J=0} = \int \mathcal{D} \Phi \exp(i S[\Phi]) = \langle 0 | \hat \phi(x_1) | 0 \rangle
+\end{equation}
+and
+\begin{equation}
+	\left.\frac{-i}{Z[0]} \frac{\partial Z[J]}{\partial J(x_1)} \right|_{J=0} = \frac{\int \mathcal{D} \Phi e^{iS[\Phi]} \phi(x_1)}{\int \mathcal{D} \Phi e^{iS[\Phi]}} = \langle \Omega | \hat \phi(x_1) | \Omega \rangle.
+\end{equation}
+In general we obtain
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	\frac{(-i)^n}{Z[0]} \frac{\partial^n Z[J]}{\partial J(x_1) \dots \partial J(x_2)} = \langle \Omega | \hat \phi(x_1) \dots \hat \phi(x_n) | \Omega \rangle
+\end{empheq}
+
+\subsection{The Feynman propagator from path-integrals}
+Considering the Klein-Gordon Lagrangian
+\begin{equation}
+	\mathcal{L} = - \frac{1}{2} \phi (\square + m^2) \phi
+\end{equation}
+we can construct the generating functional by adding a classical source
+\begin{equation}
+	Z_0[J] = N \int \mathcal{D} \phi \exp \left\{ i \int \Diff4 x \left[ - \frac{1}{2} \phi (\square_x + m^2 ) \phi + J(x) \phi (x) \right] \right\},
+\end{equation}
+which can be solved by our gaussian integral \ref{gaussianIntegral} yielding
+\begin{equation}
+	Z_0[J] = N \int \mathcal{D} \phi \exp\left\{ i \int \Diff4 x \int \Diff4y \left[-\frac{1}{2} J(x) \Pi(x-y) J(y)\right] \right\}.
+\end{equation}
+We can see, that the desired propagator is given as a greens function of the inversion of $(\square_x - m^2) \Pi(x-y) = - \delta(x-y)$, which we already solved by
+\begin{equation}
+	\Pi(x-y) = \int \frac{d^4 p}{(2 \pi)^4} \frac{1}{p^2- m^2} e^{i p(x-y)}.
+\end{equation}
+So putting all together we obtained the Feynman propagator from the path-integral formulation
+\begin{empheq}[box={\mybluebox[5pt]}]{align}
+	\langle 0 | T \{ \hat \phi_0(x) \hat \phi_0(y) \} | 0 \rangle &=  \left. \frac{(-i)^2}{Z_0[0]} \frac{\partial^2 Z[J]}{\partial J(x) \partial J(y)} \right|_{J=0} = \frac{- n \int \mathcal{D} \phi e^{iS[\phi]} i \Pi(x-y)}{N \int \mathcal{D} \phi e^{i S[\phi]}} \\
+	&= i \Pi(x-y) = \int \frac{d^4 p}{(2\pi)^4} \frac{i}{p^2 - m^2} e^{ip(x-y)}
+\end{empheq}
+
+\subsection{Fermionic path integral}
+\subsubsection{Grassman algebra}
+Let us define the Grassman algebra a set of objects $\mathcal{G}$ generated by a basis $\{\theta_i\}$, so called Grasman numbers with the following properties
+\begin{equation}
+	\theta_i \theta_j = - \theta_j \theta_i, \quad \theta_i + \theta_j = \theta_j + \theta_i \quad \text{and} \quad \theta_i + 0 = \theta_i
+\end{equation}
+The most general element then is
+\begin{equation}
+	g = a + b \theta, \quad a, b \in \mathbb{C},
+\end{equation}
+since $\theta^2 = 0$. Reusing the general element we can define the integral
+\begin{equation}
+	\int \diff \theta ( a + b\theta ) = \int \diff \theta a + \int \diff \theta b \theta = b,
+\end{equation}
+since the integral should map from $\mathcal{G}$ to $\mathbb{C}$ and $\int \diff \theta \theta \equiv 1$. The path integral consists of Gaussian integrals of the form
+\begin{equation}
+	\int \diff \theta_1\diff \theta_2 e^{\theta_1 A_{12} \theta_2} = \int \diff \theta_1 \diff \theta_2 (1 + \theta_1 A_{12} \theta_2) = A_{12},
+\end{equation}
+where we Taylor expanded the exponential. To generalize we introduce $n\theta_i$ and $n \overline \theta_i$
+\begin{align}
+	\int \diff \theta_1 \cdots \diff \theta_n \diff \overline \theta_1 \cdots \overline \theta_n e^{- \overline \theta_i A_{ij} \theta_j}  &= \int \diff \theta_1 \cdots \diff \theta_n \diff \overline \theta_1 \cdots \overline \theta_n (1 - \overline \theta_i A_{ij} \theta_j + \frac{1}{2} \overline \theta_i A_{ij} \theta_j \overline \theta_k A_{kl} \overline \theta_l + \cdots ) \\
+	&= \frac{1}{n!} \sum_{perturbations{i_n}} \pm A_{i_1i_2} \cdots A_{i_{n-1}i_n},
+\end{align}
+which is the same as the determinant. Thus
+\begin{equation}
+	\int \diff \theta_1 \cdots \diff \theta_n \diff \overline \theta_1 \cdots \overline \theta_n e^{- \overline \theta_i A_{ij} \theta_j} = \det(A)
+\end{equation}
+Remember that for ordinary numbers we had
+\begin{equation}
+	\int \diff x_1 \cdots \diff x_n e^{-\frac{1}{2} x_i A_{ij} x_j} = \sqrt{\frac{(2\pi)^n}{\det(A)}}
+\end{equation}
+Including the external currents $\eta_i$ and $\overline \eta_i$ yields
+\begin{empheq}[box={\mybluebox[5pt]}]{align}
+	\int \diff \overline \theta_1 \cdots \diff\overline \theta_n \diff \theta_1 \cdots \diff \theta_n e^{-\overline\theta_i A{ij} \theta_j + \overline\eta_i\theta_i + \overline\theta_i \eta_i} &= e^{\overline{\vec\eta}A^{-1}\overline{\vec\eta}} \int \diff\overline{\vec\theta} \diff\vec \theta e^{-(\overline{\vec\theta} - \overline{\vec\theta} A^{-1})A(\vec\theta-A^{-1}\vec\eta)} \\
+	&= \det(A)e^{\overline{\vec\eta}A^{-1}\vec\eta},
+\end{empheq}
+which is all we need for a path integral.
+
+\subsubsection{Fermionic propagator}
+Let us take the continuum limit, replacing
+\begin{equation}
+	i \to x, \quad \theta_i \to \psi(x), \quad \text{and} \quad \overline\theta_i \to \overline \psi(x) 
+\end{equation}
+yielding the generation function
+\begin{align}
+	Z[\overline\eta, \eta] &= \int \mathcal{D}[\overline\psi(x)]\mathcal{D}[\psi(x)] e^{i \int \Diff4x[\overline\psi(i\slashed \partial - m)\psi + \overline\eta\psi + \overline\psi\eta + i \epsilon \overline\psi\psi]} \\
+	&= \det(i\slashed\partial - m) e^{i\int\Diff4x\int\Diff4y \overline\eta(y)(i\slashed\partial -m + i\epsilon)^{-1}\eta(x)},
+\end{align}
+where we used $A = -i(i\slashed\partial - m + i\epsilon)$.
+The 2-point function in the free theory is
+\begin{align}
+	\langle 0 | T\{\psi(x)\overline\psi(y)\}|0\rangle &= \left.\frac{1}{Z[0]} \frac{\partial^2 Z[\overline\eta, \eta]}{\partial \overline\eta(x) \partial\eta(y)}\right|_{\eta=0} \\
+	&= \frac{i}{i\slashed\partial - m + i\epsilon} \delta^4(x-y) \\
+	&= \int \frac{\Diff4p}{(2\pi)^4} \frac{i}{\slashed p- m + i\epsilon} e^{-ip(x-y)},
+\end{align}
+so for the Dirac propagator 
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	\langle 0 | T\{\psi(x)\overline\psi(y)\}|0\rangle =  \int \frac{\Diff4p}{(2\pi)^4} \frac{i (\slashed p +m)}{p^2 -m^2 + i\epsilon} e^{-ip(x-y)}.
+\end{empheq}
+
+\subsection{Photon Propagator with Path Integrals}
+The path integral is given as
+\begin{equation}
+	\mathcal{I} = \int \mathcal{D} A e^{iS[A]},
+\end{equation}
+where the integral is over each of the four components: $\mathcal{D} A \equiv \mathcal{D}A^0  \mathcal{D}A^1  \mathcal{D}A^2  \mathcal{D}A^3$. To derive the photon propagator we will use as in \ref{photonPropagator} the Maxwell-Lagrangian
+\begin{equation}
+	\mathcal{L}_{Maxwell} = -\frac{1}{4} F_{\mu\nu}F^{\mu\nu}, \quad \text{where} \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+\end{equation}
+with the action
+\begin{equation}
+	S_{Maxwell} [A] = \frac{1}{2} \int \frac{\Diff4k}{((2\pi)^4} \widetilde{A}_\mu(k) (-k^2 g^{\mu\nu} + k^\mu k^\nu) \widetilde{A}_\nu(-k)
+\end{equation}
+
+\begin{proof}
+\begin{align}
+	S_{Maxwell} [A] &= \int \Diff4x \left[-\frac{1}{4} (\partial_\mu A_\nu - \partial_\nu A_\mu) (\partial^\mu A^\nu - \partial^\nu A^\mu) \right] \\
+	&= -\frac{1}{2} \int \Diff4x [(\partial_\mu A_\nu)(\partial^\mu A^\nu - \partial^\nu A^\mu)] \\
+	&= -\frac{1}{2} \int \Diff4x \{ \partial_\mu[A_\nu \partial^\mu A^\nu] - A_\nu \partial_\mu \partial^\mu A^\nu - \partial_\mu[A_\nu\partial^\nu A^\mu] + A_\nu \partial_\mu \partial^\nu A^\mu \} \\
+	&= - \frac{1}{2} \int \Diff4x [ \partial_\mu A_\nu (\partial^\mu A^\nu - \partial^\nu A^\mu) + A^\nu \partial_\mu (\partial^\mu A^\nu - \partial^\nu A^\mu)] \\
+	&= \frac{1}{2} \int \Diff4x \{ A_\nu(x) (\square g^{\mu\nu} - \partial^\mu\partial^\nu)A_\mu(y) + \partial_\mu[A_\nu(x) (\partial^\mu A^\nu - \partial^\nu A^\mu(y)) ]\} \\
+	&= \int\Diff4x \int\frac{\Diff4k_1}{(2\pi)^4} \int\frac{\Diff4k_2}{(2\pi)^4} A_\nu(k_1) (k_1 k_2 g^{\mu\nu} - k_2^\mu k_1^\nu)A_\mu(k_2) e^{ix(k_1-k_2)} \\
+	&= \int \frac{\Diff4k_1}{(2\pi)^4}\int\frac{\Diff4k_2}{(2\pi)^4} \delta(k_1+k_2)  A_\nu(k_1) (k_1 k_2 g^{\mu\nu} - k_2^\mu k_1^\nu)A_\mu(k_2) e^{ix(k_1-k_2)} \\
+	&=  \frac{1}{2} \int \frac{\Diff4k}{((2\pi)^4} \widetilde{A}_\mu(k) (-k^2 g^{\mu\nu} + k^\mu k^\nu) \widetilde{A}_\nu(-k),
+\end{align}
+\end{proof}
+We then can write the generating functional as
+\begin{align}
+	Z[J] &= \int\mathcal{D}A \exp\{i S_{Maxwell}[A]\} \\
+		&= \int\mathcal{D}A \exp \left\{i \int\Diff4\left[-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + J^\mu(x)A_\mu(x)\right]\right\} \\
+    		&= \int\mathcal{D}A \left\{\frac{i}{2} \int\frac{\Diff4k}{(2\pi)^4} [ \widetilde{A}_\mu(k) (-k^2 g^{\mu\nu} + k^\mu k^\nu ) \widetilde A_\nu (-k) + \widetilde{J}^\mu(k) \widetilde{A}_\mu (-k) + \widetilde{J}^\mu(-k) \widetilde{A}_\mu(k) \right\}.
+\end{align}
+Performing a the Gaussian integral yields
+\begin{equation}
+	Z[J] = \exp\left[\frac{1}{2} \int \frac{\Diff4k}{(2\pi)^4} \widetilde{J}_\mu(k) D^{\mu\nu}_F(k) \widetilde{J}_\nu (-k) \right],
+\end{equation}
+where we have to invert
+\begin{equation}
+	(-k^2 g_{\mu\nu} + k_\mu k_\nu) D^{\nu \sigma}_F (k) = i \delta_\mu^\sigma
+\end{equation}
+to obtain the propagator $D^{\mu\nu}_F$, which is unfortunately (as we saw in \ref{sec:photonPropagator}) not possible. To solve this problem we introduce
+\begin{equation}
+	1 = \int \mathcal{D} \alpha(x) \delta(G(A^\alpha)) \det\left(\frac{\delta G(A^\alpha)}{\delta\alpha}\right),
+\end{equation}
+where $A^\alpha$ denotes the gauge-transformed field, 
+\begin{equation}
+	A^\alpha_\mu(x) = A_\mu(x) - \frac{1}{e} \partial_\mu \alpha(x).
+\end{equation}
+\begin{proof}
+\begin{align}
+	\int \mathcal{D} \alpha(x) \delta(G(A^\alpha)) \det\left(\frac{\delta G(A^\alpha)}{\delta\alpha}\right) &= \int\mathcal{D}\alpha(x) \delta(A^\alpha) \det\left(\frac{\delta A^\alpha}{\delta G(A^\alpha)}\right) \det\left(\frac{(\delta G(A^\alpha)}{\delta \alpha}\right) \\
+	&= \int\mathcal{D}\alpha(x) \delta(A^\alpha) \det\left(\frac{\delta A^\alpha}{\delta \alpha}\right) \\
+	&= \int\mathcal{D}\alpha(x) \delta(\alpha) \det\left(\frac{\delta \alpha}{\delta A^\alpha}\right) \det\left(\frac{\delta A^\alpha}{\delta \alpha}\right) \\
+	&= \int \mathcal{D}\alpha(x) \delta(\alpha) = 1,
+\end{align}
+where we used 
+\begin{equation}
+	\delta(f(x)) = \frac{\delta(x)}{\det (f'(x))} \quad \text{and} \quad \det(A^{-1}) = \frac{1}{\det(A)}.
+\end{equation}
+\end{proof}
+Multiplying our generating function by the newly introduced term yields
+\begin{align}
+	Z[J] &= \int \mathcal{D} \alpha(x) \int \mathcal{D} A \delta(G(A^\alpha)) \det\left(\frac{\delta G(A^\alpha)}{\delta \alpha}\right) e^{iS_{Maxwell}[A]} \\
+	&= \int \mathcal{D}(x) \int \mathcal{A^\alpha} \delta(G(A^\alpha)) \det\left(\frac{\delta G(A^\alpha)}{\delta \alpha}\right) \exp \left\{ i \int\Diff4x \left[- \frac{1}{4}F_{\mu\nu}F^{\mu\nu} + J^\mu(x) A^\alpha_\mu(x)\right]\right\} \\
+	&= \left(\int\mathcal{D}\alpha\right) \int\mathcal{D}A\delta(G(A)) \det\left(\frac{\delta G(A)}{\delta\alpha}\right) \exp\left\{i\int\Diff4x\left[-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + J^\mu(x)A_\mu(x)\right]\right\},
+\end{align}
+where in the third line we renamed the integration variable $A^\alpha_\mu(x)$ as $A_\mu(x)$, and made the crucial observation that the integral over the gauge motions $\mathcal{D}\alpha$ factorizes: nothing depends on $\alpha$! Therefore we can redefine our generating functional
+\begin{equation}
+	Z[J] \equiv  \int\mathcal{D}A\delta(G(A)) \det\left(\frac{\delta G(A)}{\delta\alpha}\right) \exp\left\{i\int\Diff4x\left[-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + J^\mu(x)A_\mu(x)\right]\right\}.
+\end{equation}
+To proceed we need to define our gauge fixing function $G(A)$, choosing
+\begin{equation}
+	G(A) = \partial^\mu A_\mu - \omega(x)
+\end{equation}
+implying
+\begin{equation}
+	G(A^\alpha) = \partial^\mu A_\mu = \frac{\partial^2}{e}\alpha - \omega(x) \quad \Rightarrow \quad \frac{\delta G(A)}{\delta \alpha} = -\frac{\partial^2}{e}
+\end{equation}
+and
+\begin{equation}
+	Z[J] = \det\left(-\frac{\partial^2}{e}\right) \int \mathcal{D}A \delta(\partial^\mu A_\mu - \omega(x) ) \exp \left\{i \int \Diff4x \left[ - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + J^\mu(x) A_\mu(x) \right]\right\}.
+\end{equation}
+This equality holds for any $\omega(x)$, so we may as well integrate over all $\omega(x)$ with some weight of our choice 
+\begin{align}
+	Z[J] &= \det\left(-\frac{\partial^2}{e}\right) \int\mathcal{D}\omega(x) \int \mathcal{D}A \delta(\partial^\mu A_\mu - \omega(x) ) \exp \left\{i \int \Diff4x \left[ - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + J^\mu(x) A_\mu(x) - \frac{\omega^2}{2\xi} \right]\right\} \\
+	&= \det\left(-\frac{\partial^2}{e}\right) \int \mathcal{D}A  \exp \left\{i \int \Diff4x \left[ - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} + J^\mu(x) A_\mu(x) - \frac{(\partial^\mu A_\mu)^2}{2\xi} \right]\right\} \\
+	&= \det\left(-\frac{\partial^2}{e}\right) \int \mathcal{D} A \exp \left\{ i\int\Diff4x \left[\frac{1}{2} A_\nu (\partial^2 g^{\mu\nu} - \partial^\mu\partial^\nu) A_\mu + J^\mu(x) A_\mu(x) - \frac{(\partial^\mu A_\mu)^2}{2 \xi} \right] \right\} \\
+	&= \det\left(-\frac{\partial^2}{e}\right) \int \mathcal{D}A \exp\left\{i \int\Diff4x \left[\frac{1}{2} A_\nu \left(\partial^2 g^{\mu\nu} - \left(1-\frac{1}{\xi}\right)\partial^\mu\partial^\nu\right) A_\mu + J^\mu(x) A_\mu(x) \right] \right\},  
+\end{align}
+where in the second line we integrated by part the new $\xi$-dependent term, discarded the surface term and combined it the Maxwell term. For a given $\xi$ the quadratic form we need to invert is now
+\begin{equation}
+	\left(-k^2 g_{\mu\nu} + \left(1 - \frac{1}{\xi} \right) k_\mu k_\nu \right) D^{\nu\sigma}_F (k) = i \delta^\sigma_\mu
+\end{equation}
+with he photon propagator as result
+\begin{empheq}[box={\mybluebox[5pt]}]{equation}
+	\widetilde{D}^{\nu\sigma}_F (k) = \frac{-i}{k^2 + i\delta} \left(g^{\nu\sigma} - (1-\xi) \frac{k^\nu k^\sigma}{k^2}\right). e^{-ip(x-y)}.
+\end{empheq}
+\section{The Gluon propagator}
+
+\section{QCD}\label{QCD}
+\subsection{Feynman rules}
+\begin{equation}
+	\mathcal{L}_{kin} = - \frac{1}{4} (\partial_\mu A_\nu^a - \partial_\nu A_\mu^a)^2 - \frac{1}{2 \xi} (\partial_\mu  A_\mu^a )^2 + \overline{\Psi}_i (i \slashed \partial - m) \psi_i - \phi_i^* ( \square + M^2) \phi_i - \overline c^a \square c^a
+\end{equation}

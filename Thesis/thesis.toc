@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Theory}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Pearson's $\chi ^2$ test}{6}{subsection.1.2}
+\contentsline {section}{\numberline {2}Adler function Contributions}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Dimension Zero}{6}{subsection.2.1}
+\contentsline {section}{\numberline {A}Numerical Analysis}{7}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Newton-Raphson Method}{7}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Newton-Cotes}{7}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Gauss Quadrature}{7}{subsection.A.3}
