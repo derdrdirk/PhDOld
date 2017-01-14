@@ -1,36 +1,36 @@
 #include "theory.h"
 
 
-double myFunction(double x, double y) {
-  return x*x*x*x + x*x + x*y + y*y;
-}
 
-void minuitFunction(int& nDim, double* gout, double& result, double par[], int flg) {
-  result = myFunction(par[0], par[1]);
-}
 
 
 Theory::Theory () {
   std::cout << "Theory..." << std::endl;
 }
 
-double Theory::Dimension0(double a) {
-  return 3 + 7*a*a + 28*a*a*a*a*a;
+double Theory::Dimension0(double x) {
+  return x*x;
   // return 1./4./M_PI * ( 1. + a );
 }
 
 void Theory::testMinuit() {
 
-//Fitter* minimizer = new TFitter(2);
-//
-//
-// double p1 =-1;
-// minimizer->ExecuteCommand("SET PRINTOUT", &p1,1);
-//
-// minimizer->SetFCN(minuitFunction);
-// minimizer->SetParameter(0,"X",2,1,0,0);
-// minimizer->SetParameter(1,"Y",2,1,0,0);
-//
+  OPE fcn;
+
+  {
+  ROOT::Minuit2::MnUserParameters upar;
+  upar.Add("x", 1., 0.1);
+  upar.Add("y", 1., 0.1);
+  upar.Add("z", 1., 0.1);
+  upar.Add("w", 1., 0.1);
+
+  ROOT::Minuit2::MnMigrad migrad(fcn, upar);
+  ROOT::Minuit2::FunctionMinimum min = migrad();
+  std::cout << "minimum : " << min << std::endl;
+  }
+
+  
+  
 }
 
 
@@ -97,3 +97,6 @@ Doub Theory::qgauss(const Doub a, const Doub b) {
   
   return s;
 }
+
+
+
