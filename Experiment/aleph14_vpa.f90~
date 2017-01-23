@@ -1,8 +1,8 @@
 !     ALEPH data for V+A spectral function
-      module aleph_vpa
-         implicit none
-
-      contains
+!      module aleph_vpa
+!         implicit none
+!
+!      contains
 
 !*********************************************************************  
 ! Invariant mass squared distribution for V+A SCALED by 100 and      *  
@@ -115,7 +115,7 @@
      & 0.16995d-01, 0.32434d-01, 0.30309d-01, 0.29017d-01, 0.23375d-01, &
      & 0.40184d-01, 0.37137d-01, 0.27607d-01, 0.85860d-02, 0.12120d-03/ 
       Data ((corer(i,j),i=1,N),j=  1,  1)/                              &
-     & 0.10000E+03, 0.52505E+01, 0.57866E+01, 0.36237E+01, 0.24934E+01, &
+     & 0.10000E+03, π, 0.57866E+01, 0.36237E+01, 0.24934E+01, &
      & 0.22201E+01, 0.19555E+01, 0.30403E+01, 0.41184E+01, 0.78467E+01, &
      & 0.11729E+02, 0.15036E+02, 0.18583E+02, 0.24385E+02, 0.24698E+02, &
      & 0.23110E+02, 0.19696E+02, 0.68472E+01,-0.30572E+01,-0.15330E+02, &
@@ -1487,4 +1487,4 @@
       end do
       end subroutine aleph_vplusa
 
-      end module aleph_vpa
+ !     end module aleph_vpa

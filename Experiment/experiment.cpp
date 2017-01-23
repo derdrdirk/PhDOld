@@ -28,7 +28,7 @@ Experiment::Experiment(double minEnergy, double maxEnergy, int numBins) {
 void Experiment::readAleph() {
   double sbin[80], dsbin[80], sfm2[80], derr[80], corerr[80][80];
   aleph_vplusa_(sbin, dsbin, sfm2, derr, corerr);
-  std::cout << corerr[1][1] << std::endl;
+  std::cout << corerr[33][47] << std::endl;
 }
 
 void Experiment::listData() {
