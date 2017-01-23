@@ -1,28 +1,20 @@
+
 #include "theory.h"
-
-
-
+#include "FCN.h"
 
 
 Theory::Theory () {
   std::cout << "Theory..." << std::endl;
 }
 
-double Theory::Dimension0(double x) {
-  return x*x;
-  // return 1./4./M_PI * ( 1. + a );
-}
 
 void Theory::testMinuit() {
 
-  OPE fcn;
+  FCN fcn;
 
   {
   ROOT::Minuit2::MnUserParameters upar;
   upar.Add("x", 1., 0.1);
-  upar.Add("y", 1., 0.1);
-  upar.Add("z", 1., 0.1);
-  upar.Add("w", 1., 0.1);
 
   ROOT::Minuit2::MnMigrad migrad(fcn, upar);
   ROOT::Minuit2::FunctionMinimum min = migrad();
@@ -67,7 +59,7 @@ void Theory::gauleg(Doub x1, Doub x2, std::vector<double>& x, std::vector<double
 
 
 // Gauss Quadratur
-Doub Theory::qgauss(const Doub a, const Doub b) {
+Doub Theory::qgauss(const double func, const Doub a, const Doub b) {
   // std::cout << "Gauss" << std::endl;
 
   std::vector<double> x(10);
@@ -75,21 +67,9 @@ Doub Theory::qgauss(const Doub a, const Doub b) {
 
   gauleg(a, b, x, w);
 
-  // for ( auto const& value: x ) {
-  //   std::cout << value << std::endl;
-  // }
-
-  // double sum;
-  // for (auto const& val: w) {
-  //   std::cout << val << std::endl;
-  //   sum += val;
-  // }
-
-  // std::cout << "Sum :" << sum << std::endl;
-
   double s = 0;
   for (int i = 0; i < x.size(); i++) {
-    s += w[i]*Theory::Dimension0(x[i]);
+    s += w[i]*func;
   }
 
   
@@ -97,6 +77,9 @@ Doub Theory::qgauss(const Doub a, const Doub b) {
   
   return s;
 }
+
+
+
 
 
 

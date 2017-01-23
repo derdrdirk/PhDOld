@@ -1,7 +1,13 @@
 #include "experiment.h"
+#include <vector>
 
 extern"C" {
     double vphlmntv2_(double *energy, double *vprehadsp, double *vprehadtm, double *vpimhad, double *vprelepsp, double *vpreleptm, double *vpimlep, double *vpretopsp, double *vpretoptm, int *nrflag);
+}
+
+
+extern"C" {
+  void aleph_vplusa_(double *sbin, double *dsbin, double *sfm2, double *derr, double (*corerr)[80]);
 }
 
 
@@ -17,6 +23,12 @@ Experiment::Experiment(double minEnergy, double maxEnergy, int numBins) {
       data[e] = vpimhad * teubnerFactor;
   }
   std::cout << "Datataken" << std::endl;
+}
+
+void Experiment::readAleph() {
+  double sbin[80], dsbin[80], sfm2[80], derr[80], corerr[80][80];
+  aleph_vplusa_(sbin, dsbin, sfm2, derr, corerr);
+  std::cout << corerr[1][1] << std::endl;
 }
 
 void Experiment::listData() {

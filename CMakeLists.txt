@@ -26,10 +26,16 @@ include_directories(Experiment Theory ${ROOT_INCLUDE_DIRS})
 add_executable(mixing 
 main.cpp
 teubner.f
-Experiment/experiment.cpp
-Experiment/experiment.h
+Experiment/aleph14_vpa.f90
+Experiment/num_const.f90
+Experiment/Experiment.cpp
+Experiment/Experiment.h
 Theory/theory.cpp
 Theory/theory.h
+Theory/OPE.h
+Theory/OPE.cpp
+Theory/FCN.h
+Theory/FCN.cpp
 )
 
 target_link_libraries(mixing ${ROOT_LIBRARIES})

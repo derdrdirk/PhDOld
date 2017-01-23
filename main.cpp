@@ -9,15 +9,16 @@
   }
 
 int main() {
-  // Experiment exp(0.1, 3.0, 10000);
+
+  Experiment exp(0.1, 3.0, 10000);
+  exp.readAleph();
   // exp.exportData();
   // // exp.plot();
   // std::cout << "Integral: " << exp.integrate(2.) << std::endl;
 
 
+  
 
-  Theory th;
-  th.testMinuit();
   // th.qgauss(-23.0, 17.0);
   // double var = th.Dimension0(1);
   // std::cout << var << std::endl;
