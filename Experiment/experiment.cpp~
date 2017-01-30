@@ -7,7 +7,7 @@ extern"C" {
 
 
 extern"C" {
-  void aleph_vplusa_(double *sbin[80], double *dsbin[80], double *sfm2[80], double *derr[80], double *corerr[80][80]);
+  void aleph_vplusa_(double *sbin, double *dsbin, double *sfm2, double *derr, double (*corerr)[80]);
 }
 
 
@@ -27,8 +27,8 @@ Experiment::Experiment(double minEnergy, double maxEnergy, int numBins) {
 
 void Experiment::readAleph() {
   double sbin[80], dsbin[80], sfm2[80], derr[80], corerr[80][80];
-  aleph_vplusa_(&sbin, &dsbin, &sfm2, &derr, &corerr);
-  std::cout << "test" << std::endl;
+  aleph_vplusa_(sbin, dsbin, sfm2, derr, corerr);
+  std::cout << corerr[33][47] << std::endl;
 }
 
 void Experiment::listData() {

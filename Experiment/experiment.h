@@ -5,7 +5,7 @@
 class Experiment {
  public:
   Experiment(double minEnergy, double maxEnergy, int numBins);
-  void readAleph();
+  void VAmomAleph();
   void exportData();
   void listData();
   void plot();

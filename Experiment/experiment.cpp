@@ -1,5 +1,7 @@
 #include "experiment.h"
 #include <vector>
+#include <cmath>
+
 
 extern"C" {
     double vphlmntv2_(double *energy, double *vprehadsp, double *vprehadtm, double *vpimhad, double *vprelepsp, double *vpreleptm, double *vpimlep, double *vpretopsp, double *vpretoptm, int *nrflag);
@@ -25,11 +27,35 @@ Experiment::Experiment(double minEnergy, double maxEnergy, int numBins) {
   std::cout << "Datataken" << std::endl;
 }
 
-void Experiment::readAleph() {
+
+
+void Experiment::VAmomAleph() {
   double sbin[80], dsbin[80], sfm2[80], derr[80], corerr[80][80];
   aleph_vplusa_(sbin, dsbin, sfm2, derr, corerr);
-  std::cout << corerr[33][47] << std::endl;
+
+  double s0 = 1.9;
+  int Nmax = 0;
+  
+  // Set Nmax to next bigger sbin
+  for (int i = 80; i > 0; i--) {
+    std::cout << sbin[i] << std::endl;
+    if(fabs(s0-sbin[i]) < dsbin[i]/2.) {
+      Nmax = i;
+      // std::cout << "Nmax: " << Nmax << std::endl;
+      break;
+    }
+  }
+
+  // Integrate momenta up to s0
+  double mom = 0.;
+  for (int i=1; i < Nmax; i++) {
+    mom += sfm2[i];
+  }
+  std::cout << "mom: " << mom << std::endl;
+  
+  
 }
+
 
 void Experiment::listData() {
   for (auto const& ent : data) {

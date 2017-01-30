@@ -1485,8 +1485,9 @@
           corerr(j,i) = corerr(i,j)
         end do
      end do
-
-     print *, corerr(34,48);
+ 
+! PRINT out 
+!     print *, corerr(34,48);
      
       end subroutine aleph_vplusa
 

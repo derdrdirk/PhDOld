@@ -1,0 +1,6 @@
+#include "Aleph.h"
+#include <vector>
+#include <iostream>
+
+Aleph::Alpeh() {
+  std::cout << "ALEPH INIT" << std::endl;
