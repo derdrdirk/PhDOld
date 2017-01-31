@@ -19,7 +19,7 @@ MESSAGE( STATUS "ROOT_INCLUDE_DIRS" ${ROOT_INCLUDE_DIRS} )
 MESSAGE( STATUS "ROOT_LIBRARIES" ${ROOT_LIBRARIES} )
 MESSAGE( STATUS "ROOT_CXX_FLAGS" ${ROOT_CXX_FLAGS} ) # -pthread -stdlib=libc++ -std=c++1y -m64
 
-include_directories(Experiment Theory ${ROOT_INCLUDE_DIRS})
+include_directories(Experiment Theory Numeric ${ROOT_INCLUDE_DIRS})
 # link_directories(/opt/local/libexec/root6/lib/root)
 
 
@@ -32,6 +32,8 @@ Experiment/Experiment.cpp
 Experiment/Experiment.h
 Experiment/Aleph.cpp
 Experiment/Aleph.h
+Numeric/Numeric.h
+Numeric/Numeric.cpp
 Theory/theory.cpp
 Theory/theory.h
 Theory/OPE.h

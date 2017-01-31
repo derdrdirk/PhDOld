@@ -1,8 +1,8 @@
-#include <vector>
 
 class Aleph {
  public:
   explicit Aleph(double x);
+  double VAmom(double s0);
 
   class Weights {
    public:
@@ -12,6 +12,10 @@ class Aleph {
   class Factors {
    public:
     double wTau(double x);
+  
+    double Be = 17.827;  // HFAG 2011
+    double mtau = 1.77682;  // PDG 2012
+    
   };
  private:
   Weights weights;
