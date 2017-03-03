@@ -6,12 +6,12 @@ class Aleph {
 
   class Weights {
    public:
-    double w1(double x);
+    static double w1(double x);
   };
 
   class Factors {
    public:
-    double wTau(double x);
+    static double wTau(double x);
   
     double Be = 17.827;  // HFAG 2011
     double mtau = 1.77682;  // PDG 2012

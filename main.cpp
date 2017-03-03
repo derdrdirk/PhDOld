@@ -19,7 +19,7 @@ int main() {
   // std::cout << "Integral: " << exp.integrate(2.) << std::endl;
 
    Aleph aleph(1.0);
-   aleph.VAmom(2.);
+   std::cout << aleph.VAmom(2.) << std::endl;
 
   // Numeric num;
   // std::cout << num.integrate(func, -21, 3) << std::endl;

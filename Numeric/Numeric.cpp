@@ -6,9 +6,8 @@
 
 // 3rd Numerical Recpies p.184 gauleg
 // Gauss Quadratur
-double  Numeric::integrate(double (*func)(double), double a, double b) {
-  // std::cout << "Gauss" << std::endl;
-
+double  Numeric::integrate(double (*func)(double), double scale,
+                           double a, double b) {
   std::vector<double> x(10);
   std::vector<double> w(10);
 
@@ -49,11 +48,8 @@ double  Numeric::integrate(double (*func)(double), double a, double b) {
   // qgauss Integrate
   double s = 0;
   for (int i = 0; i < x.size(); i++) {
-    s += w[i]*func(x[i]);
+    s += w[i]*func(x[i]*scale);
   }
-
-  
-  std::cout << "Integral value: " << s << std::endl;
-  
+    
   return s;
 }

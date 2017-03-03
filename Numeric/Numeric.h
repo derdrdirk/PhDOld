@@ -3,5 +3,5 @@
 
 class Numeric {
  public:
-  double integrate(double (*func)(double), double a, double b);
+  double integrate(double (*func)(double), double scale,  double a, double b);
 };

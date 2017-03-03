@@ -1,0 +1,263 @@
+jamin@lapMJ:~/for/fesr/fesr_aleph_2015$ make
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c num_const.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c gauss.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c params.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c paramsDV.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c rge_const.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c condens.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c weights_D.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c weights_rho.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c weights_used.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c s0s_sets.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c s0s_fit.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c s0s_out.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c cVA0_const.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c cVA0_depen.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c RPM_const.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c opal98_spec.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c aleph_vv.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c aleph_aa.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c aleph_vpa.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c aleph_vma.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c matrix.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c fesr.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c gauleg.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c alphas_run.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c mq_run.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c snleq.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcorrD0.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcorrD2.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcorrD4.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcorrD68.f90
+VAcorrD68.f90:10.34:
+
+      function DVA68(r,i,j,s,astau,rhoVA,c8VA)
+                                  1
+Warning: Unused dummy argument 'astau' at (1)
+VAcorrD68.f90:10.24:
+
+      function DVA68(r,i,j,s,astau,rhoVA,c8VA)
+                        1
+Warning: Unused dummy argument 'i' at (1)
+VAcorrD68.f90:10.26:
+
+      function DVA68(r,i,j,s,astau,rhoVA,c8VA)
+                          1
+Warning: Unused dummy argument 'j' at (1)
+VAcorrD68.f90:10.22:
+
+      function DVA68(r,i,j,s,astau,rhoVA,c8VA)
+                      1
+Warning: Unused dummy argument 'r' at (1)
+VAcorrD68.f90:43.33:
+
+      function DVpA68(i,j,s,astau,rhoVpA,c8VpA)
+                                 1
+Warning: Unused dummy argument 'astau' at (1)
+VAcorrD68.f90:43.23:
+
+      function DVpA68(i,j,s,astau,rhoVpA,c8VpA)
+                       1
+Warning: Unused dummy argument 'i' at (1)
+VAcorrD68.f90:43.25:
+
+      function DVpA68(i,j,s,astau,rhoVpA,c8VpA)
+                         1
+Warning: Unused dummy argument 'j' at (1)
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c RPMmodel.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c incgam.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcintD0.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcintD2.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcintD4.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAcintD68.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAdeltas.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c PSpheno.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAmomAleph2014.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAmomOpal2012.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c VAmomth.f90
+VAmomth.f90:10.32:
+
+                          aGGinv,rhoD6,c8D8,kap,gam,alp,bet,momth)
+                                1
+Warning: Unused dummy argument 'agginv' at (1)
+VAmomth.f90:10.55:
+
+                          aGGinv,rhoD6,c8D8,kap,gam,alp,bet,momth)
+                                                       1
+Warning: Unused dummy argument 'alp' at (1)
+VAmomth.f90:10.59:
+
+                          aGGinv,rhoD6,c8D8,kap,gam,alp,bet,momth)
+                                                           1
+Warning: Unused dummy argument 'bet' at (1)
+VAmomth.f90:29.29:
+
+      real(dp) :: cintDVpm_VA !, cintDV_VA
+                             1
+Warning: Unused variable 'cintdvpm_va' declared at (1)
+VAmomth.f90:32.30:
+
+      complex(dc) :: cintVA2FO, cintVA4FO, cintVA68
+                              1
+Warning: Unused variable 'cintva2fo' declared at (1)
+VAmomth.f90:32.41:
+
+      complex(dc) :: cintVA2FO, cintVA4FO, cintVA68
+                                         1
+Warning: Unused variable 'cintva4fo' declared at (1)
+VAmomth.f90:10.51:
+
+                          aGGinv,rhoD6,c8D8,kap,gam,alp,bet,momth)
+                                                   1
+Warning: Unused dummy argument 'gam' at (1)
+VAmomth.f90:10.47:
+
+                          aGGinv,rhoD6,c8D8,kap,gam,alp,bet,momth)
+                                               1
+Warning: Unused dummy argument 'kap' at (1)
+VAmomth.f90:74.41:
+
+                             &kaA,gaA,alA,beA,momth)
+                                         1
+Warning: Unused dummy argument 'ala' at (1)
+VAmomth.f90:73.59:
+
+                             &aGGinv,rhoD6,c8D8,kaV,gaV,alV,beV,&
+                                                           1
+Warning: Unused dummy argument 'alv' at (1)
+VAmomth.f90:74.45:
+
+                             &kaA,gaA,alA,beA,momth)
+                                             1
+Warning: Unused dummy argument 'bea' at (1)
+VAmomth.f90:73.63:
+
+                             &aGGinv,rhoD6,c8D8,kaV,gaV,alV,beV,&
+                                                               1
+Warning: Unused dummy argument 'bev' at (1)
+VAmomth.f90:92.29:
+
+      real(dp) :: cintDVpm_VA !, cintDV_VA
+                             1
+Warning: Unused variable 'cintdvpm_va' declared at (1)
+VAmomth.f90:95.31:
+
+      complex(dc) :: cintVpA2FO, cintVpA4FO, cintVpA68
+                               1
+Warning: Unused variable 'cintvpa2fo' declared at (1)
+VAmomth.f90:74.37:
+
+                             &kaA,gaA,alA,beA,momth)
+                                     1
+Warning: Unused dummy argument 'gaa' at (1)
+VAmomth.f90:73.55:
+
+                             &aGGinv,rhoD6,c8D8,kaV,gaV,alV,beV,&
+                                                       1
+Warning: Unused dummy argument 'gav' at (1)
+VAmomth.f90:74.33:
+
+                             &kaA,gaA,alA,beA,momth)
+                                 1
+Warning: Unused dummy argument 'kaa' at (1)
+VAmomth.f90:73.51:
+
+                             &aGGinv,rhoD6,c8D8,kaV,gaV,alV,beV,&
+                                                   1
+Warning: Unused dummy argument 'kav' at (1)
+VAmomth.f90: In function ‘momth_va’:
+VAmomth.f90:54:0: warning: ‘REALPART_EXPR <crtauth$>’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                       &+ cintVA68(m,r,1,2,s0,astau,rhoD6,c8D8) !&
+ ^
+VAmomth.f90: In function ‘momth_vplusa’:
+VAmomth.f90:122:0: warning: ‘REALPART_EXPR <crtauth$>’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                       &+ 3.d0*dcmplx(deltaP(m,s0),0)
+ ^
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c dVAmomth.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c pipole.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c dualvio.f90
+dualvio.f90:70.54:
+
+      real(dp)             :: cintDVp0_VA, cintDVp1_VA,&
+                                                      1
+Warning: Unused variable 'cintdvp1_va' declared at (1)
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c chi2DV.f90
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c rtauVpAfit.f90
+rtauVpAfit.f90:138.27:
+
+      real(dp) :: cintDV_VA, cintDVpm_VA, sun
+                           1
+Warning: Unused variable 'cintdv_va' declared at (1)
+rtauVpAfit.f90:135.53:
+
+      real(dp) :: corex(Nsum,Nsum), cormod(Nsum,Nsum)
+                                                     1
+Warning: Unused variable 'cormod' declared at (1)
+rtauVpAfit.f90:133.54:
+
+      real(dp) :: momthVpA(Nsum), dmomthVpA(Nvar,Nsum)
+                                                      1
+Warning: Unused variable 'dmomthvpa' declared at (1)
+rtauVpAfit.f90:129.33:
+
+      integer  :: k, l, kl, klold, m, n, mn, mnold
+                                 1
+Warning: Unused variable 'klold' declared at (1)
+rtauVpAfit.f90:129.50:
+
+      integer  :: k, l, kl, klold, m, n, mn, mnold
+                                                  1
+Warning: Unused variable 'mnold' declared at (1)
+rtauVpAfit.f90: In function ‘chisqvpa’:
+rtauVpAfit.f90:290:0: warning: iteration 9 invokes undefined behavior [-Waggressive-loop-optimizations]
+             xmin(k) = xval(k)
+ ^
+rtauVpAfit.f90:289:0: note: containing loop
+          do k = 1, 15
+ ^
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c rtauVmAfit.f90
+rtauVmAfit.f90:138.27:
+
+      real(dp) :: cintDV_VA, cintDVpm_VA, sun
+                           1
+Warning: Unused variable 'cintdv_va' declared at (1)
+rtauVmAfit.f90:135.53:
+
+      real(dp) :: corex(Nsum,Nsum), cormod(Nsum,Nsum)
+                                                     1
+Warning: Unused variable 'cormod' declared at (1)
+rtauVmAfit.f90:133.54:
+
+      real(dp) :: momthVpA(Nsum), dmomthVpA(Nvar,Nsum)
+                                                      1
+Warning: Unused variable 'dmomthvpa' declared at (1)
+rtauVmAfit.f90:129.33:
+
+      integer  :: k, l, kl, klold, m, n, mn, mnold
+                                 1
+Warning: Unused variable 'klold' declared at (1)
+rtauVmAfit.f90:129.50:
+
+      integer  :: k, l, kl, klold, m, n, mn, mnold
+                                                  1
+Warning: Unused variable 'mnold' declared at (1)
+rtauVmAfit.f90: In function ‘chisqvpa’:
+rtauVmAfit.f90:290:0: warning: iteration 9 invokes undefined behavior [-Waggressive-loop-optimizations]
+             xmin(k) = xval(k)
+ ^
+rtauVmAfit.f90:289:0: note: containing loop
+          do k = 1, 15
+ ^
+gfortran -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu -c writeVAmomAleph.f90
+gfortran -o main -ffree-form -Wall -O -L/usr/lib/x86_64-linux-gnu num_const.o gauss.o params.o paramsDV.o rge_const.o condens.o weights_D.o weights_rho.o weights_used.o s0s_sets.o s0s_fit.o s0s_out.o cVA0_const.o cVA0_depen.o RPM_const.o opal98_spec.o aleph_vv.o aleph_aa.o aleph_vpa.o aleph_vma.o matrix.o fesr.o gauleg.o alphas_run.o mq_run.o snleq.o VAcorrD0.o VAcorrD2.o VAcorrD4.o VAcorrD68.o RPMmodel.o incgam.o VAcintD0.o VAcintD2.o VAcintD4.o VAcintD68.o VAdeltas.o PSpheno.o VAmomAleph2014.o VAmomOpal2012.o VAmomth.o dVAmomth.o pipole.o dualvio.o chi2DV.o rtauVpAfit.o rtauVmAfit.o writeVAmomAleph.o -lpacklib
+rtauVmAfit.o: In function `chisqvpa_':
+rtauVmAfit.f90:(.text+0x0): multiple definition of `chisqvpa_'
+rtauVpAfit.o:rtauVpAfit.f90:(.text+0x0): first defined here
+rtauVmAfit.o: In function `rtauvpafit_':
+rtauVmAfit.f90:(.text+0x1484): multiple definition of `rtauvpafit_'
+rtauVpAfit.o:rtauVpAfit.f90:(.text+0x1484): first defined here
+fesr.o: In function `main':
+fesr.f90:(.text+0x1e): undefined reference to `rtauvmafit_'
+collect2: error: ld returned 1 exit status
+Makefile:27: recipe for target 'main' failed
+make: *** [main] Error 1

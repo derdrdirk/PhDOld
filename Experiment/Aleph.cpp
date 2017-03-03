@@ -16,7 +16,6 @@ double func2(double x) {
 
 Aleph::Aleph(double x) {
   std::cout << "ALEPH INIT" << std::endl;
-  std::cout << factors.wTau(4.) << std::endl;
 }
 
 
@@ -35,15 +34,17 @@ double Aleph::VAmom(double s0) {
   }
 
   Numeric num;
-  std::cout << "int test: "  << num.integrate(func2, 0, 5) << std::endl;
-  // Integrate momenta up to s0
+   // Integrate momenta up to s0
   double mom = 0.;
   for (int i=1; i < Nmax; i++) {
-    mom += sfm2[i];
+    double weightInt = num.integrate(weights.w1, s0,
+                                     sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
+    double weightTauInt = num.integrate(factors.wTau, s0,
+                                      sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
+    mom += weightInt/weightTauInt*sfm2[i];
   }
 
-  mom *= pow(factors.mtau, 2)/factors.Be/s0;
-  std::cout << "mom: " << mom << std::endl;
+  mom *= pow(factors.mtau, 2)/100/factors.Be/s0;
   return mom;
 }
 
