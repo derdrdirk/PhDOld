@@ -42,6 +42,9 @@
 \makeatother
 %%%%%%%%%%%5
 
+
+\DeclareMathOperator{\sfm2}{sfm2}
+
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
 
@@ -302,6 +305,40 @@ with
 \begin{equation}
 	K_0 = K_1 = 1,  \quad K_2 = \frac{295}{24} - 9 \zeta_3, \quad K_3 = \frac{58057}{288} - \frac{779}{4} \zeta_3 - \frac{75}{2} \zeta_5
 \end{equation}
+
+\section{The Experimental Spectral Moments}
+
+The general form of the spectral moment can be defined as:
+\begin{equation}
+	I_{exp} = \int_0^{s_0} \frac{d s}{s_0} \omega_{\tau} \left(\frac{s}{s_0} \right) \rho_{exp}(s).
+\end{equation}
+This is the experimental side we need to build our $\chi^2$ method to fit our parameters to the data. The spectral-function of the inclusive Hadron $\tau$ decays is connected to the total decay rate
+\begin{equation}
+  R_{\tau} = 12 \pi^2  \int_0^{s_\tau} \frac{\diff s}{s_\tau} \left(1-\frac{s}{s_{\tau}} \right)^2 \left[\left( 1 +  2\frac{s}{s_\tau}\right) \rho_{V+A}^{(1+0)} - 2 \frac{s}{s_\tau} \rho_{V+A}^{(0)} (s) \right]
+\end{equation} 
+where $s_\tau = m_\tau^2$ and $\rho^{(1)}(s)$ as well as $\rho^{(0)}(s)$ being the transversal and the longitudinal spectral functions, which are related to the theoretical vector/axialvector (V/A) correlators and implicitly contain the CKM ($|V_{ud}|^2$) and electro-weak ($S_{EW}$) correction factors.
+
+The total decay rate $R$ is measured within the experiments and is provided by the \textit{Aleph group} as a Fortran subroutine, outputting the binned, normalized invariant mass squared distribution
+\begin{equation}
+  \int_{0}^{m_{\tau}^2} \diff s \sfm2_{V/A}(s) = \int_0^{m_\tau^2} \diff s B_i \left(\frac{\diff N_i}{N_i \diff s}\right) \times 100 = B_i \times 100 = R_{\tau, i} B_e \times 100
+\end{equation}
+of the non-strange hadronic tau decays for the respective channel i=\{V-channel, the A-channel, the combined V+A and V-A channels\}. 
+
+Knowing that the contribution of the longitudinal spectral function is neglect-able\footnote{Apart from the pion-pion pole contribution, which we'll substract from the data.} we can rewrite the total decay width into
+\begin{equation}
+  R_{\tau, V/A} = 12 \pi^2  \int_0^{s_\tau} \frac{\diff s}{s_\tau} \left(1-\frac{s}{s_{\tau}} \right)^2 \left( 1 +  2\frac{s}{s_\tau}\right) \rho_{V+A}^{(1+0)},
+\end{equation}
+which we can connect to the binned experimental data
+\begin{align}
+  \sfm2(sbin) =& 100 \times \frac{12 \pi^2 B_e}{s_\tau} \int_{sbin - 0.5dsbin}^{sbin + 0.5dsbin} \diff s \left(1-\frac{s}{s_\tau}\right)^2 \left(1+s\frac{s}{s_\tau}\right) \rho_{exp}(sbin) \\
+  =& 100 \times \frac{12\pi^2 B_e}{s_\tau} \omega_\tau \rho_{exp}(sbin),
+\end{align}
+where $sbin$ denotes the denotes the center of the data bin with a given bin width $dsbin$\footnote{The bin widths given in the Aleph data are not equidistant, but given}. As we related now the data ($\sfm2$) to the spectral function ($\rho_{exp}$) we can write out the final expression used for the weighted experimental spectral moments
+\begin{equation}
+	I_{exp, \omega} = \sum_{sbin\leq s_0} \left( \int_{sbin-0.5dsbin}^{sbin+0.5dsbin} \diff s \omega\left(\frac{s}{s_0}\right) \rho_{exp}(sbin) \right)
+\end{equation}
+
+
 
 
 
