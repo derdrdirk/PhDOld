@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Theory}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{5}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Pearson's $\chi ^2$ test}{5}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.2}Pearson's $\chi ^2$ test}{6}{subsection.1.2}
 \contentsline {section}{\numberline {2}Adler function Contributions}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Dimension Zero}{6}{subsection.2.1}
 \contentsline {section}{\numberline {3}The Experimental Spectral Moments}{6}{section.3}

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <cmath>
 #include "Numeric.h"
+#include <complex>
+using namespace std::complex_literals;
 
 
 extern"C" {
@@ -39,20 +41,28 @@ double Aleph::VAmom(double s0) {
   for (int i=1; i < Nmax; i++) {
     double weightInt = num.integrate(weights.w1, s0,
                                      sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
-    double weightTauInt = num.integrate(factors.wTau, s0,
+    double weightTauInt = num.integrate(constants.wTau, s0,
                                       sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
     mom += weightInt/weightTauInt*sfm2[i];
   }
 
-  mom *= pow(factors.mtau, 2)/100/factors.Be/s0;
+  mom *= pow(constants.mtau, 2)/100/constants.Be/s0;
+
+  std::complex<double> x = 1. + 1i;
+  std::cout << "complx" << weights.w2(x) << std::endl;
+  
   return mom;
 }
 
-double Aleph::Factors::wTau(double x) {
+double Aleph::Constants::wTau(double x) {
   return pow((1-x), 2)*(1+2*x);
 }
 
 
 double Aleph::Weights::w1(double x) {
   return 1.;
+}
+
+std::complex<double> Aleph::Weights::w2(std::complex<double> x) {
+  return std::pow(1.-x, 3)*(1.+x);
 }

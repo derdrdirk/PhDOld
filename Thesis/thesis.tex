@@ -330,10 +330,14 @@ Knowing that the contribution of the longitudinal spectral function is neglect-a
 \end{equation}
 which we can connect to the binned experimental data
 \begin{align}
-  \sfm2(sbin) =& 100 \times \frac{12 \pi^2 B_e}{s_\tau} \int_{sbin - 0.5dsbin}^{sbin + 0.5dsbin} \diff s \left(1-\frac{s}{s_\tau}\right)^2 \left(1+s\frac{s}{s_\tau}\right) \rho_{exp}(sbin) \\
+  \sfm2(sbin) =& 100 \times \frac{12 \pi^2 B_e}{s_\tau} \underbrace{\int_{sbin - 0.5dsbin}^{sbin + 0.5dsbin} \diff s \left(1-\frac{s}{s_\tau}\right)^2 \left(1+s\frac{s}{s_\tau}\right)}_{\omega_\tau} \rho_{exp}(sbin) \\
   =& 100 \times \frac{12\pi^2 B_e}{s_\tau} \omega_\tau \rho_{exp}(sbin),
 \end{align}
-where $sbin$ denotes the denotes the center of the data bin with a given bin width $dsbin$\footnote{The bin widths given in the Aleph data are not equidistant, but given}. As we related now the data ($\sfm2$) to the spectral function ($\rho_{exp}$) we can write out the final expression used for the weighted experimental spectral moments
+where $sbin$ denotes the denotes the center of the data bin with a given bin width $dsbin$\footnote{The bin widths given in the Aleph data are not equidistant, but given}. The needed spectral function is therefore given by: 
+\begin{equation}
+	\rho_{exp} = \frac{s_\tau}{100 \times 12 \pi^2 B_e \omega_\tau} \sfm2(sbin) 
+\end{equation}
+As we related now the data ($\sfm2$) to the spectral function ($\rho_{exp}$) we can write out the final expression used for the weighted experimental spectral moments
 \begin{equation}
 	I_{exp, \omega} = \sum_{sbin\leq s_0} \left( \int_{sbin-0.5dsbin}^{sbin+0.5dsbin} \diff s \omega\left(\frac{s}{s_0}\right) \rho_{exp}(sbin) \right)
 \end{equation}

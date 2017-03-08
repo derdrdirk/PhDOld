@@ -22,6 +22,7 @@
          complex(dc), intent(in) :: x
          complex(dc)             :: wD00
 
+         write(*,*) i1, x
          wD00 = (i1-x)**3*(i1+x)
          end function wD00
 

@@ -24,9 +24,9 @@
       call init_s0s_out(Nsum,Ns0s,s0s)
 
 !     Load ALEPH 2014 vector plus axialvector data
-!     call aleph_vplusa(sbin,dsbin,sfm2,derr,corerr)
+      call aleph_vplusa(sbin,dsbin,sfm2,derr,corerr)
 !     Load ALEPH 2014 vector minus axialvector data
-      call aleph_vminusa(sbin,dsbin,sfm2,derr,corerr)
+!      call aleph_vminusa(sbin,dsbin,sfm2,derr,corerr)
 
 !     write(*,*) ''
 !     write(*,*) 'w(x) = 1'
@@ -64,12 +64,12 @@
 
 !     V+A SPECTRAL MOMENTS
 !     write(*,*) 'V+A SPECTRAL FUNCTIONS'
-!     call    momex_vpa(mom,covmom)
+      call    momex_vpa(mom,covmom)
 !     call relmomex_vplusa(Nmom,Ns0s,s0s,mom,covmom)
 
 !     V-A SPECTRAL MOMENTS
 !     write(*,*) 'V-A SPECTRAL FUNCTIONS'
-      call    momex_vma(mom,covmom)
+!     call    momex_vma(mom,covmom)
 !     call relmomex_vminusa(Nmom,Ns0s,s0s,mom,covmom)
 
 

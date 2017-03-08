@@ -45,6 +45,7 @@
          end do
       end do
 
+
 !     Calculate relative moments integrated up to s_0
       kl = 0
       do k = 1, Nmom
@@ -60,7 +61,6 @@
                 &wgtD(k,dcmplx((sbin(i)+dsbin(i)/2.d0)/s0s(k,l),0)))/&
                &(wD00(dcmplx((sbin(i)-dsbin(i)/2.d0)/stau,0)) -&
                 &wD00(dcmplx((sbin(i)+dsbin(i)/2.d0)/stau,0))))
-
                mom(kl) = mom(kl) + stau/s0s(k,l)/Be*sfm2(i)*wratio(i,kl)
             end do
             if (k /= 1) then
