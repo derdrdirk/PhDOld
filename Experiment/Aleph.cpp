@@ -50,6 +50,7 @@ double Aleph::VAmom(double s0) {
 
   std::complex<double> x = 1. + 1i;
   std::cout << "complx" << num.integrate(weights.w2, 1., 3.+1i, 7.+3i) << std::endl;
+  std::cout << "real " << num.integrate(weights.w1, 1., 5., 9.) << std::endl;
   
   return mom;
 }
@@ -60,7 +61,7 @@ double Aleph::Constants::wTau(double x) {
 
 
 double Aleph::Weights::w1(double x) {
-  return 1.;
+  return x*x*x;
 }
 
 std::complex<double> Aleph::Weights::w2(std::complex<double> x) {
