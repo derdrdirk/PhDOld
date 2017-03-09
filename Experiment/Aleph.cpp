@@ -39,17 +39,17 @@ double Aleph::VAmom(double s0) {
    // Integrate momenta up to s0
   double mom = 0.;
   for (int i=1; i < Nmax; i++) {
-    double weightInt = num.integrate(weights.w1, s0,
-                                     sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
-    double weightTauInt = num.integrate(constants.wTau, s0,
-                                      sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
-    mom += weightInt/weightTauInt*sfm2[i];
+    // double weightInt = num.integrate(weights.w1, s0,
+    //                                  sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
+    // double weightTauInt = num.integrate(constants.wTau, s0,
+    //                                   sbin[i]-dsbin[i]/2., sbin[i]+dsbin[i]/2.);
+    // mom += weightInt/weightTauInt*sfm2[i];
   }
 
-  mom *= pow(constants.mtau, 2)/100/constants.Be/s0;
+  //  mom *= pow(constants.mtau, 2)/100/constants.Be/s0;
 
   std::complex<double> x = 1. + 1i;
-  std::cout << "complx" << weights.w2(x) << std::endl;
+  std::cout << "complx" << num.integrate(weights.w2, 1., 3.+1i, 7.+3i) << std::endl;
   
   return mom;
 }

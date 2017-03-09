@@ -2,26 +2,29 @@
 #include "Numeric.h"
 #include <iostream>
 #include <math.h>
+#include <complex>
 
 
 // 3rd Numerical Recpies p.184 gauleg
 // Gauss Quadratur
-double  Numeric::integrate(double (*func)(double), double scale,
-                           double a, double b) {
-  std::vector<double> x(10);
-  std::vector<double> w(10);
+std::complex<double>  Numeric::integrate(
+                    std::complex<double> (*func)(std::complex<double>),
+                    double scale, std::complex<double> a, std::complex<double> b
+                ) {
+  std::vector<std::complex<double> > x(10);
+  std::vector<std::complex<double> > w(10);
 
-  double x1 = a;
-  double x2 = b;
+  std::complex<double> x1 = a;
+  std::complex<double> x2 = b;
 
 
   // GAULEG weights and abciss nodes
   // initialise integration
   // find abscissas + weights
   const double EPS = 1.0e-14;
-  double z1, z, xm, xl, pp, p3, p2, p1;
+  std::complex<double> z1, z, xm, xl, pp, p3, p2, p1;
   int n = x.size();
-  int m = (n+1)/2;
+  int m = (n+1.)/2.;
   xm = 0.5*(x2+x1);
   xl = 0.5*(x2-x1);
   for (int i = 0; i < m; i++) {
@@ -32,12 +35,14 @@ double  Numeric::integrate(double (*func)(double), double scale,
       for (int j = 0; j < n; j++) {
         p3 = p2;
         p2 = p1;
-        p1 = ((2.0*j+1.0)*z*p2-j*p3) / (j+1);
+        std::complex<double> jComplx(j, 0.);
+        p1 = ((2.0*j+1.0)*z*p2-jComplx*p3) / (jComplx+1.);
       }
-      pp = n*(z*p1-p2)/(z*z-1.0);
+      std::complex<double> nComplx(n, 0.);
+      pp = nComplx*(z*p1-p2)/(z*z-1.0);
       z1 = z;
       z = z1 - p1/pp;
-    } while (fabs(z-z1) > EPS);
+    } while (std::abs(z-z1) > EPS);
     x[i] = xm - xl*z;
     x[n-1-i] = xm+xl*z;
     w[i] = 2.0*xl/((1.0-z*z)*pp*pp);
@@ -46,7 +51,7 @@ double  Numeric::integrate(double (*func)(double), double scale,
 
 
   // qgauss Integrate
-  double s = 0;
+  std::complex<double> s = 0;
   for (int i = 0; i < x.size(); i++) {
     s += w[i]*func(x[i]*scale);
   }

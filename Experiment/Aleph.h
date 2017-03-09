@@ -9,7 +9,7 @@ class Aleph {
   class Weights {
    public:
     static double w1(double x);
-    std::complex<double> w2(std::complex<double> x);
+    static std::complex<double> w2(std::complex<double> x);
   };
 
   class Constants {
