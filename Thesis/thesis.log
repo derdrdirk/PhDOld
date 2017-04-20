@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  20 APR 2017 10:04
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  20 APR 2017 11:21
  restricted system commands enabled.
  file:line:error style messages enabled.
 **thesis.tex
@@ -1431,7 +1431,7 @@ Missing character: There is no ’ (U+2019) in font cmti10!
 
 [1]
 \openout2 = ./tex/tauDecays.aux
- (./tex/tauDecays.tex <img/tauDecay.png, id=125, 179.67125pt x 115.43124pt>
+ (./tex/tauDecays.tex <img/tauDecay.png, id=140, 179.67125pt x 115.43124pt>
 File: img/tauDecay.png Graphic file (type png)
 
 <use img/tauDecay.png>
@@ -1463,10 +1463,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 94.
-
-
-Package natbib Warning: Citation `Jamin2008' on page 4 undefined on input line 9
-6.
 
 [4]) [5] [6
 
@@ -1515,7 +1511,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 3.
 
-<img/appendix/tauOpticalTheorem.png, id=272, 492.84125pt x 465.74pt>
+<img/appendix/tauOpticalTheorem.png, id=289, 492.84125pt x 465.74pt>
 File: img/appendix/tauOpticalTheorem.png Graphic file (type png)
 
 <use img/appendix/tauOpticalTheorem.png>
@@ -1525,24 +1521,49 @@ Package luatex.def Info: img/appendix/tauOpticalTheorem.png used on input line 2
  [12
 
 ] [13<./img/appendix/tauOpticalTheorem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
-Package natbib Warning: Citation `DiogoPHD' on page 14 undefined on input line 1
-10.
+ []
 
-[14]) [15] (./thesis.bbl)
 
-Package natbib Warning: There were undefined citations.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 112.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\beta' on input line 112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 112.
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 121.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 121.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 121.
+
+[15]) [16] (./thesis.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
-[16
+ [17
 
+Missing character: There is no ò (U+00F2) in font cmr10!
+Missing character: There is no ̈ (U+0308) in font cmr10!
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
- (./thesis.aux (./tex/tauDecays.aux) (./tex/appendix/appendix.aux))
+ (./thesis.aux (./tex/tauDecays.aux)
+(./tex/appendix/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D167858CD04671272B504C2FCE29AD93;1251.
+(rerunfilecheck)             Checksum: 1710FF3E0E937C621AB4D3E923EF9AB8;1436.
 
 
 LaTeX Warning: There were undefined references.
@@ -1551,14 +1572,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
 )
 
 Here is how much of LuaTeX's memory you used:
- 15137 strings out of 495118
+ 15157 strings out of 495118
  100000,383344 words of node,token memory allocated
- 13803 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1912 glue, 1 kern, 50 glue_spec, 1 write nodes
-   avail lists: 2:45,3:162,4:62,5:286,6:2087,7:535,8:125,9:744,10:15,11:141
- 18072 multiletter control sequences out of 65536+600000
+ 15378 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2137 glue, 1 kern, 50 glue_spec, 1 write nodes
+   avail lists: 2:45,3:162,4:74,5:286,6:2087,7:578,8:131,9:748,10:16,11:141
+ 18082 multiletter control sequences out of 65536+600000
  85 fonts using 3524555 bytes
- 41i,23n,43p,864b,348s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 41i,23n,43p,864b,403s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
@@ -1584,9 +1605,9 @@ msfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on thesis.pdf (17 pages, 403186 bytes).
+Output written on thesis.pdf (18 pages, 412048 bytes).
 
-PDF statistics: 420 PDF objects out of 1000 (max. 8388607)
- 136 named destinations out of 1000 (max. 131072)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+PDF statistics: 450 PDF objects out of 1000 (max. 8388607)
+ 146 named destinations out of 1000 (max. 131072)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

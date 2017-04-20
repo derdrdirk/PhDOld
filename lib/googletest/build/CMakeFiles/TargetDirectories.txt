@@ -1,0 +1,8 @@
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/install/local.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/list_install_components.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/rebuild_cache.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/edit_cache.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/install/strip.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/install.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/gtest_main.dir
+/Users/Knowledge/Downloads/googletest/googletest/build/CMakeFiles/gtest.dir

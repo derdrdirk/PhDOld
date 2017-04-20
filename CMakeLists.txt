@@ -7,7 +7,6 @@ project(mixing CXX Fortran)
 
 
 
-
 # SET UP ROOT https://root.cern.ch/how/integrate-root-my-project-cmake
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /opt/local/libexec/root6/etc/root/cmake)
 find_package(ROOT REQUIRED COMPONENTS MATH MINUIT2)
@@ -19,8 +18,12 @@ MESSAGE( STATUS "ROOT_INCLUDE_DIRS" ${ROOT_INCLUDE_DIRS} )
 MESSAGE( STATUS "ROOT_LIBRARIES" ${ROOT_LIBRARIES} )
 MESSAGE( STATUS "ROOT_CXX_FLAGS" ${ROOT_CXX_FLAGS} ) # -pthread -stdlib=libc++ -std=c++1y -m64
 
-include_directories(Experiment Theory Numeric ${ROOT_INCLUDE_DIRS})
-# link_directories(/opt/local/libexec/root6/lib/root)
+include_directories(Experiment Theory Numeric Test ${ROOT_INCLUDE_DIRS})
+# link_directories(/opt/local/libexec/root6/lib/root )
+
+add_subdirectory(lib/googletest)
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 
 add_executable(mixing 
@@ -40,6 +43,9 @@ Theory/OPE.h
 Theory/OPE.cpp
 Theory/FCN.h
 Theory/FCN.cpp
+Test/Test.h
+Test/Test.cpp
 )
 
-target_link_libraries(mixing ${ROOT_LIBRARIES})
+
+target_link_libraries(mixing ${ROOT_LIBRARIES} gtest gtest_main)

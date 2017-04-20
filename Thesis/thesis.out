@@ -11,8 +11,11 @@
 \BOOKMARK [1][-]{section.5}{The Experimental Spectral Moments}{}% 11
 \BOOKMARK [1][-]{appendix.A}{Derivation of the -decay ratio}{}% 12
 \BOOKMARK [1][-]{appendix.B}{Coefficients}{}% 13
-\BOOKMARK [1][-]{appendix.C}{Numerical Analysis}{}% 14
-\BOOKMARK [2][-]{subsection.C.1}{Newton-Raphson Method}{appendix.C}% 15
-\BOOKMARK [2][-]{subsection.C.2}{Newton-Cotes}{appendix.C}% 16
-\BOOKMARK [2][-]{subsection.C.3}{Gauss Quadrature}{appendix.C}% 17
-\BOOKMARK [2][-]{subsection.C.4}{Discrepancies between Matthias and my Code}{appendix.C}% 18
+\BOOKMARK [2][-]{subsection.B.1}{ function}{appendix.B}% 14
+\BOOKMARK [2][-]{subsection.B.2}{-function}{appendix.B}% 15
+\BOOKMARK [2][-]{subsection.B.3}{Adler function}{appendix.B}% 16
+\BOOKMARK [1][-]{appendix.C}{Numerical Analysis}{}% 17
+\BOOKMARK [2][-]{subsection.C.1}{Newton-Raphson Method}{appendix.C}% 18
+\BOOKMARK [2][-]{subsection.C.2}{Newton-Cotes}{appendix.C}% 19
+\BOOKMARK [2][-]{subsection.C.3}{Gauss Quadrature}{appendix.C}% 20
+\BOOKMARK [2][-]{subsection.C.4}{Discrepancies between Matthias and my Code}{appendix.C}% 21
