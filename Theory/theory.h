@@ -10,16 +10,11 @@
 #include "Minuit2/MnHesse.h"
 #include "Minuit2/MnUserParameters.h"
 #include "Minuit2/MnPrint.h"
+#include "OPE.h"
 
-class Theory {
+class Theory: public OPE {
  public:
   Theory();
-
   
   void testMinuit();
-
-  void test() {
-  }
-  
-
 };

@@ -1,9 +1,11 @@
+#pragma once
 
 #include <vector>
 #include <iostream>
 #include <math.h>
+#include "Constants.h"
 
-class OPE {
+class OPE: public Constants {
  public:
   double AlphaS(double x);
   double Dimension0(double s);

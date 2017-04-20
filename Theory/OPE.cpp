@@ -34,7 +34,5 @@ double OPE::Adler(double s) {
 
 
 void OPE::test() {
-  double s = 3.0;
-  Theory th;
-  //  std::cout << "Int: " << th.qgauss(Adler(s), 0.1, 3.)<< std::endl;
+  std::cout << c(21) << std::endl;
 }

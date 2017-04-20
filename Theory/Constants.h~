@@ -1,0 +1,7 @@
+#pragma once
+
+class Constants {
+ public:
+  double c[4][4];
+  c[1][1] = 1;
+}

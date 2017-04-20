@@ -5,6 +5,7 @@
 #include "Experiment/Aleph.h"
 #include "Numeric.h"
 // #include "Test.h"
+#include "Constants.h"
 
 
   double func(double x) {
@@ -16,7 +17,11 @@ std::complex<double> func2(std::complex<double> x) {
 }
 
 int main(int argc, char **argv) {
+  Theory th;
+  th.test();
 
+ 
+  
   // Test::Test();
 
   // ::testing::InitGoogleTest(&argc, argv);
