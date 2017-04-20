@@ -4,7 +4,7 @@
 #include "Theory/theory.h"
 #include "Experiment/Aleph.h"
 #include "Numeric.h"
-#include "Test.h"
+// #include "Test.h"
 
 
   double func(double x) {
@@ -17,10 +17,10 @@ std::complex<double> func2(std::complex<double> x) {
 
 int main(int argc, char **argv) {
 
-  Test::Test();
+  // Test::Test();
 
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+  // ::testing::InitGoogleTest(&argc, argv);
+  // return RUN_ALL_TESTS();
   
   // Experiment exp(0.1, 3.0, 10000);
   // exp.VAmomAleph();
