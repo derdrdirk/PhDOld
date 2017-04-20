@@ -156,7 +156,7 @@
       real(dp) :: sbin(Ndat), dsbin(Ndat), sfm2(Ndat), derr(Ndat)
       real(dp) :: corerr(Ndat,Ndat), errmat(Ndat+2,Ndat+2)
       real(dp) :: jacobi(Ndat+2,Nsum), wratio(Ndat,Nsum)
-      real(dp) :: mom_pi(Nsum), pifac, dpifac
+      real(dp) :: mom_pi(Nsum), pifac, dpifac, test
 
 !     Load ALEPH 2014 vector plus axialvector data
       call aleph_vplusa(sbin,dsbin,sfm2,derr,corerr)
@@ -179,7 +179,7 @@
                if (abs(s0s(k,l)-1.d-6-sbin(i)) < dsbin(i)/2.d0) exit
             end do
                Nmax(k,l) = i
-!              write (*,*) Nmax(k,l)
+!               write (*,*) 'NMax : ', s0s(k,l), Nmax(k,l)
          end do
       end do
 
@@ -188,9 +188,11 @@
 !     write (*,*) "pion_pole: ", mom_pi(1)
 
 !     Calculate moments integrated up to s_0
+      write(*,*) "weight", wgtD(1,dcmplx(15));
+      write(*,*) "test", wD00( dcmplx(3))
       kl = 0
-      do k = 1, Nmom
-         do l = 1, Ns0s(k)
+      do k = 1, 1 !Nmom
+         do l = 2, 2!Ns0s(k)
             kl = kl + 1
             do i = 1, Nmax(k,l)
 !     Ratio of moments at centre of bins
@@ -198,13 +200,23 @@
 !                            &wr00(dcmplx(sbin(i)/stau,0)))
 !     Ratio of integrated moments
                wratio(i,kl) = s0s(k,l)/stau*real(&
+!                wratio(i,kl) = real(&
                &(wgtD(k,dcmplx((sbin(i)-dsbin(i)/2.d0)/s0s(k,l),0)) -&
                 &wgtD(k,dcmplx((sbin(i)+dsbin(i)/2.d0)/s0s(k,l),0)))/&
                &(wD00(dcmplx((sbin(i)-dsbin(i)/2.d0)/stau,0)) -&
                 &wD00(dcmplx((sbin(i)+dsbin(i)/2.d0)/stau,0))))
 
+                !write(*,*) "wratio", wratio, s0s(k,l)
+!               write(*,*) 'weight with binwidth', s0s(k,l), dsbin(i)*(wgtD(k,dcmplx((sbin(i)-dsbin(i)/2.d0)/s0s(k,l),0)) -&
+!&wgtD(k,dcmplx((sbin(i)+dsbin(i)/2.d0)/s0s(k,l),0)))
+!               write(*,*) 'weight', i, (wgtD(k,dcmplx((sbin(i)-dsbin(i)/2.d0)/s0s(k,l),0)) -&
+!                &wgtD(k,dcmplx((sbin(i)+dsbin(i)/2.d0)/s0s(k,l),0)))
+!              write(*,*) 'wration', i, kl, wratio(i, kl)
+
                mom(kl) = mom(kl) + stau/s0s(k,l)/Be*sfm2(i)*wratio(i,kl)
+               write(*,*) i, sbin(i), dsbin(i), s0s(k,l)
             end do
+            write(*,*) s0s(k,l), mom(kl), stau/s0s(k,l)/Be
             mom(kl) = mom(kl) + mom_pi(kl)
          end do
       end do

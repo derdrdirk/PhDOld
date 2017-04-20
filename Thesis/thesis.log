@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  8 MAR 2017 16:20
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  20 APR 2017 10:04
  restricted system commands enabled.
  file:line:error style messages enabled.
 **thesis.tex
@@ -289,6 +289,9 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@postskip=\skip51
 \thm@headsep=\skip52
 \dth@everypar=\toks29
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
@@ -1338,25 +1341,25 @@ Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 )
 \mytemplen=\skip63
 \mytempbox=\box46
-LaTeX Info: Redefining \sfm2 on input line 46.
+LaTeX Info: Redefining \sfm2 on input line 48.
 
-(./thesis.aux (./tex/appendix.aux))
+(./thesis.aux (./tex/tauDecays.aux) (./tex/appendix/appendix.aux))
 \openout1 = thesis.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1389,7 +1392,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring ON on input line 77.
+Package hyperref Info: Link coloring ON on input line 79.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1399,9 +1402,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count154
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 
 (./thesis.out) (./thesis.out
 warning  (pdf backend): objcompresslevel > 0 requires minorversion > 4
@@ -1409,11 +1412,11 @@ warning  (pdf backend): objcompresslevel > 0 requires minorversion > 4
 \@outlinefile=\write3
 
 \openout3 = thesis.out
-LaTeX Font Info:    Try loading font information for U+msa on input line 78.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1426,77 +1429,136 @@ Missing character: There is no ’ (U+2019) in font cmti10!
 
 \openout4 = thesis.toc
 
-[1] [2] [3]
+[1]
+\openout2 = ./tex/tauDecays.aux
+ (./tex/tauDecays.tex <img/tauDecay.png, id=125, 179.67125pt x 115.43124pt>
+File: img/tauDecay.png Graphic file (type png)
 
-LaTeX Warning: Reference `spectralAdlerRGE' on page 4 undefined on input line 21
+<use img/tauDecay.png>
+Package luatex.def Info: img/tauDecay.png used on input line 7.
+(luatex.def)             Requested size: 179.67079pt x 115.43095pt.
+ [2
+
+<./img/tauDecay.png>] [3]
+
+LaTeX Warning: Reference `app:tauDecayRatio' on page 4 undefined on input line 6
+8.
+
+
+LaTeX Warning: Reference `eq:tauDecayFESR' on page 4 undefined on input line 73.
+
+
+
+LaTeX Warning: Reference `eq:tauDecayFESR2' on page 4 undefined on input line 82
+.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 94.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Pi' on input line 94.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 94.
+
+
+Package natbib Warning: Citation `Jamin2008' on page 4 undefined on input line 9
+6.
+
+[4]) [5] [6
+
+] [7]
+
+LaTeX Warning: Reference `spectralAdlerRGE' on page 8 undefined on input line 18
 2.
 
-[4]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 271.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\chi' on input line 271.
+(hyperref)                removing `math shift' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 271.
+(hyperref)                removing `\chi' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 271.
+(hyperref)                removing `superscript' on input line 242.
 
-[5] [6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 325.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 242.
+
+[9] [10]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 296.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
- [7]
-\openout2 = ./tex/appendix.aux
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 296.
+ [11]
+\openout2 = ./tex/appendix/appendix.aux
 
-(./tex/appendix.tex
+(./tex/appendix/appendix.tex
 
-Package natbib Warning: Citation `Chapra2010' on page 8 undefined on input line 
-2.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
 
 
-Package natbib Warning: Citation `Press2007' on page 8 undefined on input line 2
-.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tau' on input line 3.
 
-) [8
 
-]
-No file thesis.bbl.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
+
+<img/appendix/tauOpticalTheorem.png, id=272, 492.84125pt x 465.74pt>
+File: img/appendix/tauOpticalTheorem.png Graphic file (type png)
+
+<use img/appendix/tauOpticalTheorem.png>
+Package luatex.def Info: img/appendix/tauOpticalTheorem.png used on input line 2
+8.
+(luatex.def)             Requested size: 258.12645pt x 243.94153pt.
+ [12
+
+] [13<./img/appendix/tauOpticalTheorem.png>]
+
+Package natbib Warning: Citation `DiogoPHD' on page 14 undefined on input line 1
+10.
+
+[14]) [15] (./thesis.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
-(./thesis.aux (./tex/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
+[16
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
+ (./thesis.aux (./tex/tauDecays.aux) (./tex/appendix/appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 78D78B871FA1B2F1A011C06621DC21AC;690.
+(rerunfilecheck)             Checksum: D167858CD04671272B504C2FCE29AD93;1251.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14947 strings out of 495118
+ 15137 strings out of 495118
  100000,383344 words of node,token memory allocated
- 8521 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1157 glue, 1 kern, 50 glue_spec, 2 write nodes
-   avail lists: 2:45,3:148,4:38,5:267,6:2172,7:565,8:124,9:681,10:5,11:140
- 18002 multiletter control sequences out of 65536+600000
- 83 fonts using 3442011 bytes
- 41i,23n,43p,722b,348s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 13803 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1912 glue, 1 kern, 50 glue_spec, 1 write nodes
+   avail lists: 2:45,3:162,4:62,5:286,6:2087,7:535,8:125,9:744,10:15,11:141
+ 18072 multiletter control sequences out of 65536+600000
+ 85 fonts using 3524555 bytes
+ 41i,23n,43p,864b,348s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
@@ -1506,20 +1568,25 @@ al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (9 pages, 284715 bytes).
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb>
+Output written on thesis.pdf (17 pages, 403186 bytes).
 
-PDF statistics: 238 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 131072)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+PDF statistics: 420 PDF objects out of 1000 (max. 8388607)
+ 136 named destinations out of 1000 (max. 131072)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

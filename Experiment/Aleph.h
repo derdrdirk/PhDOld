@@ -4,7 +4,7 @@
 class Aleph {
  public:
   explicit Aleph(double x);
-  double VAmom(double s0);
+  double VAmom(double s0, std::complex<double> (*weightFunc)(std::complex<double>) );
 
   class Weights {
    public:
@@ -18,6 +18,7 @@ class Aleph {
   
     double Be = 17.827;  // HFAG 2011
     double mtau = 1.77682;  // PDG 2012
+    double stau = std::pow(mtau, 2);
   };
  private:
   Weights weights;

@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{Olive2014}
+K.A.~u.a. Olive.
+\newblock Review of particle physics.
+\newblock {\em Chin. Phys. C38 (2014), S. 090001.}, DOI
+  10.1088/1674--1137/38/9/090001, 2014.
+\newblock URL: \url{http://dx.doi.org/10.1088/ 1674-1137/38/9/090001}.
+
+\bibitem{Press2007}
+William~H. Press, Saul A.~Teukolsky William, T.~Vetterling, and Brian~P.
+  Flannery.
+\newblock {\em Numerical Recipes}.
+\newblock Cambridge, 2007.
+
+\bibitem{Schwab2002}
+Felix Schwab.
+\newblock Strange quark mass determination from sum rules for hadronic
+  $\tau$-decays.
+\newblock Master's thesis, University of Heidelberg, 2002.
+
+\bibitem{Chapra2010}
+Raymond P.~Canale Steven C.~Chapra.
+\newblock {\em Numerical Methods for Engineers}.
+\newblock McGraw Hill, 2010.
+
+\bibitem{Tsai1971}
+Y.~Tsai.
+\newblock Decay correlations of heavy leptons in $e^+e^-\to l^+l^-$.
+\newblock {\em Phys. Rev.}, D4, 1971.
+
+\end{thebibliography}

@@ -2,6 +2,8 @@
 \usepackage{jheppub}
 \usepackage{slashed}
 \usepackage{amsthm}
+\usepackage{url}
+\usepackage{import}
 
 \usepackage{mathtools}  
 
@@ -77,45 +79,13 @@
 \begin{document}
 \maketitle
 
+\include{./tex/tauDecays}
+
+
 % \include{./tex/old}
 
 \section{Theory}\label{sect1}
-The vector two-point function (correlation function) $\Pi(s)$ is given by
-\begin{equation}
-\begin{split}
-	\Pi_{\mu\nu}(q^2) &= i \int d^D x e^{iqx} \langle 0 | T \{ j_\mu (x) j_\nu (0) \} | 0 \rangle \\
-	&= (q_\mu q_\nu - g_{\mu\nu} q^2) \Pi(q^2)
-\end{split},
-\end{equation}
-where $J_\mu = :\bar q(x) \gamma_\mu q(x):$ is the vector current. 
 
-We now want to give a more detailed derivation of the second idendity of the previous equation. Due to the Lorentz structure of $\Pi(q^2)$ we can rewrite the vector two-point function into
-\begin{equation}
-	\Pi_{\mu\nu}(q^2) = g_{\mu\nu} A(q^2) + q_\mu q_\nu B(q^2),
-\end{equation}
-where $A(q^2)$ and $B(q^2)$ are the two functions we are interested in. Multiplying both sides with $q^\mu$ yields
-\begin{equation}
-\begin{split}
-	q^\mu \Pi_{\mu\nu} (q^2) &= q^\mu g_{\mu\nu} A(q^2) + q^\mu q_\mu q_\nu B(q^2) \\
-	&= q_\mu [ A(q^2) + q^2 B(q^2) ].
-\end{split}
-\end{equation}
-Since the vector current $\partial^\mu j_\mu$ is conserved the correlation functino has to vanish. 
-\begin{equation}
-	\partial^\mu j_\mu = 0 \qquad \Rightarrow \qquad q^\mu \Pi(q^2) = 0
-\end{equation}
-Hence
-\begin{equation}
-	0 = q_\mu [ A(q^2) + q^2 B(q^2) ] \qquad \Rightarrow \qquad A = -q^2 B,
-\end{equation}
-if $q_\mu \neq 0$. Plugging in our result for $A(q^2)$ and substituting $B(q^2)$ trough $\Pi(q^2)$ in the final step gives us
-\begin{equation}
-\begin{split}
-	\Pi_{\mu\nu}(q^2) &= g_{\mu\nu}(-q^2B(q^2)) + q_\mu q_\nu B(q^2) \\
-	&= (q_\mu q_\nu - q^2 g_{\mu\nu}) \Pi(q^2).
-\end{split}
-\end{equation}
-\textcolor{red}{What exactly is s? Where does the correlator come from?}
 
 $\Pi(q^2)$ itself is not a physical quantity. However, we can define two physical quantities out of the two-point correlator. Setting $s=q^2$, the spectral function $\rho(s)$ and the Adler function $D(s)$ are given by 
 \begin{equation}
@@ -219,8 +189,9 @@ Additionally the coefficients, $c_{n, n+1} = 0$ for $n \ge 1$. The independent c
 	c_{01} &= c_{11} = 1, c_{21} = \frac{365}{24} - 11 \zeta_3 - \left(\frac{11}{12}-\frac{2}{3}\zeta_3\right)N_f,  \\ \nonumber 
 	c_{31} &= \frac{87029}{288} - \frac{1103}{4} \zeta_3 + \frac{275}{6} \zeta_5 - \left(\frac{7847}{216} = \frac{262}{9}\zeta_3 + \frac{25}{9}\zeta_5\right) N_f + \left(\frac{151}{162} - \frac{19}{27}\zeta_3\right)N_f^2.
 \end{flalign}
-\
-subsection{Theory equals Experiment}
+
+
+\subsection{Theory equals Experiment}
 \begin{equation}
 	\begin{split}
 		\int_{C_2} \diff s \Pi(s) &= -\int_{C_1} \diff s \Pi(s) \\
@@ -341,17 +312,18 @@ As we related now the data ($\sfm2$) to the spectral function ($\rho_{exp}$) we 
 \begin{equation}
 	I_{exp, \omega} = \sum_{sbin\leq s_0} \left( \int_{sbin-0.5dsbin}^{sbin+0.5dsbin} \diff s \omega\left(\frac{s}{s_0}\right) \rho_{exp}(sbin) \right)
 \end{equation}
-
-
-
-
+\begin{multline}
+	i \mathcal{M} = (-i)^2 \frac{g^2}{2} \bar u(p_\tau) \gamma_\mu \left(\frac{1-\gamma^5}{2}\right) u(p_\nu) \frac{-i}{M_W^2} \left(\frac{i}{4} \frac{g^2}{2} \Pi^{\mu\nu}(q)\right) \\
+	\times \frac{-i}{M_W^2}
+\end{multline}
+	
 
 
 \appendix
-\include{./tex/appendix}
+\include{./tex/appendix/appendix}
 
 % Bibliography:
-\bibliographystyle{plain}
+\bibliographystyle{plainurl}
 \bibliography{references} 
 
 \end{document}

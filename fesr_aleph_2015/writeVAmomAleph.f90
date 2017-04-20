@@ -49,7 +49,7 @@
       end do
 
 
-      write(*,*) ''
+  !    write(*,*) ''
 !     Compute moments and covariances for V, A, V+A, V-A spectral functions
 
 !     A SPECTRAL MOMENTS
@@ -100,8 +100,8 @@
 !     end do
 
       do i = 1, Nsum
-         write(*,FMT='(78F14.8)') sqrt(s0s(1,i)), mom(i),&
-                                 &sqrt(covmom(i,i))
+!         write(*,FMT='(78F14.8)') sqrt(s0s(1,i)), mom(i),&
+!                                 &sqrt(covmom(i,i))
       end do
 
 

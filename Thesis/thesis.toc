@@ -1,10 +1,18 @@
-\contentsline {section}{\numberline {1}Theory}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{5}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Pearson's $\chi ^2$ test}{6}{subsection.1.2}
-\contentsline {section}{\numberline {2}Adler function Contributions}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Dimension Zero}{6}{subsection.2.1}
-\contentsline {section}{\numberline {3}The Experimental Spectral Moments}{6}{section.3}
-\contentsline {section}{\numberline {A}Numerical Analysis}{8}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Newton-Raphson Method}{8}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Newton-Cotes}{8}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Gauss Quadrature}{8}{subsection.A.3}
+\contentsline {section}{\numberline {1}Tau Decays}{2}{section.1}
+\contentsline {section}{\numberline {2}Theory}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}The theoretical description of the correlator $\Pi (s)$}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}The perturbative contribution}{4}{subsubsection.2.1.1}
+\contentsline {section}{\numberline {3}Theory}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Theory equals Experiment}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Pearson's $\chi ^2$ test}{10}{subsection.3.3}
+\contentsline {section}{\numberline {4}Adler function Contributions}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dimension Zero}{10}{subsection.4.1}
+\contentsline {section}{\numberline {5}The Experimental Spectral Moments}{10}{section.5}
+\contentsline {section}{\numberline {A}Derivation of the $\tau $-decay ratio}{12}{appendix.A}
+\contentsline {section}{\numberline {B}Coefficients}{15}{appendix.B}
+\contentsline {section}{\numberline {C}Numerical Analysis}{15}{appendix.C}
+\contentsline {subsection}{\numberline {C.1}Newton-Raphson Method}{15}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Newton-Cotes}{15}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Gauss Quadrature}{15}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Discrepancies between Matthias and my Code}{15}{subsection.C.4}
