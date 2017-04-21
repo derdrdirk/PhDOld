@@ -1,7 +1,9 @@
 
 #include <iostream>
+#include <cmath>
 #include "gtest/gtest.h"
 #include "Constants.h"
+
 
 TEST(EquationTest, Zero) {
   EXPECT_EQ(0, 0);
@@ -38,13 +40,22 @@ class ConstantsTest : public ::testing::Test {
   Constants c;
 };
 
+double precision = std::pow(10, -13);
+
 // Test case must be called the class above
 // Also note: use TEST_F instead of TEST to access the test fixture (from google test primer)
-TEST_F(ConstantsTest, Constants) {
+TEST_F(ConstantsTest, Adler) {
   EXPECT_EQ(c.c(11), 1);
   EXPECT_EQ(c.c(21), 1.640);
   EXPECT_EQ(c.c(31), 6.371);
   EXPECT_EQ(c.c(41), 49.076);
+}
+
+TEST_F(ConstantsTest, Beta) {
+  EXPECT_EQ(c.beta(1), 7./2);
+  EXPECT_EQ(c.beta(2), 13./4);
+  EXPECT_NEAR(c.beta(3), -1.01562500000000000, precision);
+  EXPECT_NEAR(c.beta(4), 94.4560791469040, precision);
 }
 
 

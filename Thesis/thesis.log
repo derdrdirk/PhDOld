@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  20 APR 2017 11:21
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  21 APR 2017 08:59
  restricted system commands enabled.
  file:line:error style messages enabled.
 **thesis.tex
@@ -1540,15 +1540,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 121.
+(hyperref)                removing `math shift' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 121.
+(hyperref)                removing `\gamma' on input line 122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 121.
+(hyperref)                removing `math shift' on input line 122.
 
 [15]) [16] (./thesis.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
@@ -1574,12 +1574,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
 Here is how much of LuaTeX's memory you used:
  15157 strings out of 495118
  100000,383344 words of node,token memory allocated
- 15378 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2137 glue, 1 kern, 50 glue_spec, 1 write nodes
-   avail lists: 2:45,3:162,4:74,5:286,6:2087,7:578,8:131,9:748,10:16,11:141
+ 15385 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2138 glue, 1 kern, 50 glue_spec, 1 write nodes
+   avail lists: 2:45,3:162,4:74,5:286,6:2087,7:584,8:131,9:748,10:16,11:141
  18082 multiletter control sequences out of 65536+600000
  85 fonts using 3524555 bytes
- 41i,23n,43p,864b,403s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 41i,23n,43p,864b,405s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
@@ -1605,7 +1605,7 @@ msfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on thesis.pdf (18 pages, 412048 bytes).
+Output written on thesis.pdf (18 pages, 412156 bytes).
 
 PDF statistics: 450 PDF objects out of 1000 (max. 8388607)
  146 named destinations out of 1000 (max. 131072)
