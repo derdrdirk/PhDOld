@@ -1,6 +1,7 @@
 
 #include <vector>
 #include <complex>
+#include <iostream>
 
 class Numeric {
  public:
@@ -13,7 +14,6 @@ class Numeric {
 
     T x1 = a;
     T x2 = b;
-
 
     // GAULEG weights and abciss nodes
     // initialise integration
@@ -55,5 +55,10 @@ class Numeric {
     
     return s;
 }
+
+  // Numerically solve differential equation
+  // Used for running of the strong coupling
+  double RungeKutta(double x1, double x2, double y1,
+                    double (*func)(double, double));
 
 };

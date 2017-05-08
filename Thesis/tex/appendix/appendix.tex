@@ -158,6 +158,86 @@ from \cite{Jamin2006}
 \subsection{Newton-Raphson Method}
 \subsection{Newton-Cotes}
 \subsection{Gauss Quadrature}
+\subsection{Runge-Kutta Methods (Ordinary Differential Equations)}
+Following \cite{Chapra2015} we want to describe a numerical procedure of evaluating ordinary differential equations (ODE) of the form
+\begin{equation}
+	\frac{\diff y}{\diff x} = f(x,y).
+\end{equation}
+In general we will start with a given point $(x_i | y_i)$ and want to obtain $y_{i+1}$ at a given $x_{i+1}$\footnote{For our purposes we had to solve the differential equation of the running strong coupling $\alpha_s$ to obtain the different values at different energies. The ODE we solved numerically is given by $\beta(a_s) = - \mu \diff a_s / \diff \mu$.}. The methods used to solve an ODE numerically can be summed up as \textbf{Runge-Kutta methods} and are based on \textbf{Euler's method}, which basically takes the slope at the starting point $x_i$ to calculate the function value at the next step $y_{i+1}$
+\begin{equation}
+	y_{i+1} = y_i + \underbrace{\Phi}_{\text{Slope}} \underbrace{h}_{\text{Step size}}.
+\end{equation}
+\subsubsection{Euler's Method}
+Euler's method is expressed by
+\begin{equation}
+	\label{eq:eulersMethod}
+	y_{i+1} = y_i + f(x_i, y_i) h,
+\end{equation}
+with $f(x_i, y_i)$ being the slope at $x_i$ and $h$ being the step size ($h=x_{i+1} - x_{i}$). The method is also refered to as \textit{Euler-Cauchy} or \textit{point-slope} method. Euler's method is approximating the changing slope in the interval h to the slope at the point $(x_i)$ to calculate the function value at $x_{i+1}$. 
+Having a look at the Taylor-expansion
+\begin{equation}
+	y_{i+1} = y_i + y_i' h + \frac{y_i''}{2!} h^2 + \cdots + \frac{y_i^{(n)}}{n!} h^n + R_n,
+\end{equation}
+where $h=x_{i+1}-x_i$ and $R_n$ being the remainder term
+\begin{equation}
+	R_n = \frac{y^{(n_1)}(\Psi)}{n+1)!} h^{n+1}
+\end{equation},
+where $\Psi$ lies somewhere in the interval from $x_i$ to $x_{i+1}$. By comparing the Taylor expansion with Euler's method \eqref{eq:eulersMethod} on can see that Euler's method represents a first order Taylor expansion, but misses all higher order terms. This higher order terms contribute to a \textit{local error}. Having then more than one step $h$ this local errors then will propagate and form a so called $global error$. To improve the global error one has to either perform more steps or include higher order terms of the Taylor expansion.
+
+\subsubsection{Heun's Method}
+The main error source of Euler's method is that the derivative at the beginning of the interval is assumed to to apply across the entire step size. To improve this behavior we can use Euler's method in the first step to calculate a so called \textbf{predictor} $y^0_{i+1}$ and then average over the slope of the predictor and the starting point, yielding the so called \textbf{corrector}
+\begin{align}
+	\text{Predictor: } \qquad y_{i+1}^0 &= y_i + f(x_i,y_i) h \\
+	\text{Corrector: } \qquad y_{i+1} &= y_i + \frac{f(x_i, y_i) + f(x_{i+1}, y_{i+1}^0}{2} h.
+\end{align}
+Another advantage of Heun's method is, that one can iteratively can achieve a better result for each step, while averaging multiple times over the "corrected" y-end-point value. At this point one also should notice the similarity between Heun's method and the trapezoidal rule \textcolor{red}{missing integration part} we introduced in the context of numerical integration.
+
+\subsubsection{Runge-Kutta Methods}
+The former methods can be summed up within the so called \textbf{Runge-Kutta methods}, which basic formula is given by
+\begin{equation}
+	y_{i+1} = y_i + \Phi(x_i, y_i, h) h,
+\end{equation}
+where $\Phi(x_i, y_i, h)$ is called an \textit{increment function}, which can be interpreted as an representative slope over the interval. The increment function can be written as
+\begin{equation}
+	\Phi = a_1 k_1 + a_2 k_2 + \cdots + a_n k_n,
+\end{equation}
+where the $a_i$'s are constants and the $k$'s are defined as
+\begin{align}
+	k_1 &= f(x_i, y_i) \\
+	k_2 &= f(x_i + p_1 h, y_i + q_{11} k_1 h) \\
+	k_3 &= f(x_i + p_2 h, y_i + q_{21} k_1 h + q_{22} k_2 h) \\
+	&\vdots  \\
+	k_n &= f(x_i + p_{n-1} h, y_i + q_{n-1,1} k_1 h + q_{n-1,2} k_2 h+ \cdots + q_{n-1,n-1} k_{n-1} h),
+\end{align}
+where the $q$'s and $p$'s are constant, which have to be determined by comparison of the Taylor expansion of $y_{i+1}$. The Runge-Kutta methods are given in different orders determined by the biggest subscript of the included $k$'s (e.g. if $\Phi$ only depends on $k_1$ and $k_2$, the Range-Kutta method will be of second order). As mentioned before we have now several degrees of freedom ($a$'s, $q$'s and $p$'s), which can mostly be fixed from comparison with the Taylor expansion of $y_i$. The leftover variable can then be freely chosen. 
+
+For a second order Runge-Kutta method we can fix all but one variable
+\begin{align}
+	a_1 &= 1 - a_2 \\
+	p_1 &= q_{11} = \frac{1}{2 a_2}.
+\end{align}
+For the leftover variabel are three comon selections, 
+\begin{itemize}
+	\item Heuns method with a single corrector for choosing $a_2 = 1/2$
+	\item the Midpoint method for choosing $a_2 =  1$
+	\item and Ralston's method for choosing $a_2 = 2/3$.
+\end{itemize}
+The third order Runge-Kutta method can be shown to take the form
+\begin{equation}
+	y_{i+1} = y_i + \frac{1}{6} ( k_1 + 4 k_2 + k_3 ) h
+\end{equation}
+and the from us implemented forth order Runge-Kutta method is given by
+\begin{equation}
+	y_{i+1} = y_i + \frac{1}{6} ( k_1 + 2 k_2 + 2 k_3 + k_4) h,
+\end{equation}
+with 
+\begin{align}
+	k_1 &= f(x_i, y_i) \\
+	k_2 &= f\left(x_1 + \frac{1}{2} h, y_i + \frac{1}{2} k_1 h \right) \\
+	k_3 &= f\left(x_i + \frac{1}{2} h, y_i + \frac{1}{2} k_2 h \right) \\
+	k_4 &= f(x_i + h, y_i + k_3 h).
+\end{align}
+\footnote{The fourth-order Runge-Kutta methods reminds us at the Simpson rule from the numerical integration procedures.}
 
 \subsection{Discrepancies between Matthias and my Code}
 \begin{itemize}

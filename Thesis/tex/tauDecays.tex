@@ -1,3 +1,5 @@
+%!TEX root = ../thesis.tex
+
 \section{Tau Decays}\label{tauDecays}
 The $\tau$-lepton is the only lepton heavy enough to decay into hadrons. It is an ideal candidate to perform a QCD analysis at low to intermediate energies\footnote{At high energies we have no valid theory because $\alpha_s>>1$ for high-energies.}, extracting and probing Standard model parameters like the strong coupling $\alpha_s$. Due to it's W-Boson mediator it allows a study of the $q\bar q$ vector and axial vector current, whereas $e^+e^-\to\gamma^*\to (hadrons)$ scattering only covers the vector ones.
 For the tree level of the SM the tau decays into a $\nu_\tau$ neutrino and a W-Boson, which then decays into either $(\nu_\mu, \mu)$ and $(\nu_e, e)$ lepton pairs or $(\bar u, d)$, and $(\bar u, s)$ quark pairs, as illustrated in Figure \ref{fig:tauDecay}. Other quark pair generation is forbidden either due to the $\tau$-mass of 1776.86 MeV \cite{Olive2014} or the confinement of weak isospin ($T_3$)\footnote{E.g. the $(\bar d, u)$ pair would lead to ($\tau \to \nu_\tau + \bar d + u$), which represents an inequality in terms of weak isopsin conservation ($-1/2 \neq +1/2 + 1/2 - 1/2$).} Due to color confinement\footnote{Quarks have never been seen as single particle, but only in compounds as mesons or baryons.} the detected quark pairs are hadrons (pions, $\rho$ mesons, kaons and others).
@@ -93,9 +95,9 @@ which can be calculated within QCD.
 
 \subsection{The theoretical description of the correlator $\Pi(s)$}
 \subsubsection{The perturbative contribution}
-We will perform our analysis in the chiral limit, which cancels the longitudinal part of the two point function $\Pi^{(0)}(s) = 0$\footnote{The longitudinal part is proportional to the quark masses. Hence zero in the limit of zero quark masses}. This leaves us with with the $\Pi_V^{(1+0)}(s)$ component, which can generally be expressed as \cite{Jamin2008}
+We will perform our analysis in the chiral limit, which cancels the longitudinal part of the two point function $\Pi^{(L)}(s) = 0$\footnote{The longitudinal part is proportional to the quark masses. Hence zero in the limit of zero quark masses}. This leaves us with with the $\Pi_V^{(T+L)}(s)$ component, which can generally be expressed as \cite{Jamin2008}
 \begin{equation}
-	\Pi^{(1+0)}_V (s) = - \frac{N_c}{12 \pi^2} \sum_{n=0}^{\infty} a_\mu^n \sum_{k=0}^{n+1} c_{n,k} L^k,
+	\Pi^{(T+L)}_V (s) = - \frac{N_c}{12 \pi^2} \sum_{n=0}^{\infty} a_\mu^n \sum_{k=0}^{n+1} c_{nk} L^k,
 \end{equation}
 with
 \begin{equation}
@@ -104,6 +106,6 @@ with
 and $\mu$ being the renormalisation scale.
 With the help of Eq. \eqref{eq:AdlerTransform} we can rewrite the former expression into terms of the RG invariant Adler function
 \begin{equation}
-	D_V^{(1+0)} (s) = \frac{N_c}{12 \pi^2} \sum_{n=0}^\infty a_\mu^n \sum_{k=1}^{n+1} k c_{n,k} L^{k-1}
+	D_V^{(T+L)} (s) = \frac{N_c}{12 \pi^2} \sum_{n=0}^\infty a_\mu^n \sum_{k=1}^{n+1} k c_{nk} L^{k-1}
 \end{equation},
 where the coefficients $c_{n,k}$ are given in App. \ref{app:coefficients}.

@@ -1,8 +1,0 @@
-
-#include "Numeric.h"
-#include <iostream>
-#include <math.h>
-#include <complex>
-
-
-

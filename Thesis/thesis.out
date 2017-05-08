@@ -1,21 +1,26 @@
-\BOOKMARK [1][-]{section.1}{Tau Decays}{}% 1
-\BOOKMARK [1][-]{section.2}{Theory}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{The theoretical description of the correlator \(s\)}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{The perturbative contribution}{subsection.2.1}% 4
-\BOOKMARK [1][-]{section.3}{Theory}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Theory equals Experiment}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.2}{Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.3}{Pearson's 2 test}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Adler function Contributions}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{Dimension Zero}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{The Experimental Spectral Moments}{}% 11
-\BOOKMARK [1][-]{appendix.A}{Derivation of the -decay ratio}{}% 12
-\BOOKMARK [1][-]{appendix.B}{Coefficients}{}% 13
-\BOOKMARK [2][-]{subsection.B.1}{ function}{appendix.B}% 14
-\BOOKMARK [2][-]{subsection.B.2}{-function}{appendix.B}% 15
-\BOOKMARK [2][-]{subsection.B.3}{Adler function}{appendix.B}% 16
-\BOOKMARK [1][-]{appendix.C}{Numerical Analysis}{}% 17
-\BOOKMARK [2][-]{subsection.C.1}{Newton-Raphson Method}{appendix.C}% 18
-\BOOKMARK [2][-]{subsection.C.2}{Newton-Cotes}{appendix.C}% 19
-\BOOKMARK [2][-]{subsection.C.3}{Gauss Quadrature}{appendix.C}% 20
-\BOOKMARK [2][-]{subsection.C.4}{Discrepancies between Matthias and my Code}{appendix.C}% 21
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Tau Decays}{}% 2
+\BOOKMARK [1][-]{section.3}{Theory}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{The theoretical description of the correlator \(s\)}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{The perturbative contribution}{subsection.3.1}% 5
+\BOOKMARK [1][-]{section.4}{Theory}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Theory equals Experiment}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Transform Two Point Function to Adler Function via Complex Contour Integration by Parts}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Pearson's 2 test}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Adler function Contributions}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{Dimension Zero}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{The Experimental Spectral Moments}{}% 12
+\BOOKMARK [1][-]{appendix.A}{Derivation of the -decay ratio}{}% 13
+\BOOKMARK [1][-]{appendix.B}{Coefficients}{}% 14
+\BOOKMARK [2][-]{subsection.B.1}{ function}{appendix.B}% 15
+\BOOKMARK [2][-]{subsection.B.2}{-function}{appendix.B}% 16
+\BOOKMARK [2][-]{subsection.B.3}{Adler function}{appendix.B}% 17
+\BOOKMARK [1][-]{appendix.C}{Numerical Analysis}{}% 18
+\BOOKMARK [2][-]{subsection.C.1}{Newton-Raphson Method}{appendix.C}% 19
+\BOOKMARK [2][-]{subsection.C.2}{Newton-Cotes}{appendix.C}% 20
+\BOOKMARK [2][-]{subsection.C.3}{Gauss Quadrature}{appendix.C}% 21
+\BOOKMARK [2][-]{subsection.C.4}{Runge-Kutta Methods \(Ordinary Differential Equations\)}{appendix.C}% 22
+\BOOKMARK [3][-]{subsubsection.C.4.1}{Euler's Method}{subsection.C.4}% 23
+\BOOKMARK [3][-]{subsubsection.C.4.2}{Heun's Method}{subsection.C.4}% 24
+\BOOKMARK [3][-]{subsubsection.C.4.3}{Runge-Kutta Methods}{subsection.C.4}% 25
+\BOOKMARK [2][-]{subsection.C.5}{Discrepancies between Matthias and my Code}{appendix.C}% 26

@@ -9,7 +9,6 @@ set(CMAKE_CXX_COMPILER "clang++")
 project(mixing CXX Fortran)
 
 
-
 # SET UP ROOT https://root.cern.ch/how/integrate-root-my-project-cmake
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} /opt/local/libexec/root6/etc/root/cmake)
 find_package(ROOT REQUIRED COMPONENTS MATH MINUIT2)
@@ -23,8 +22,6 @@ MESSAGE( STATUS "ROOT_CXX_FLAGS" ${ROOT_CXX_FLAGS} ) # -pthread -stdlib=libc++ -
 
 include_directories(Experiment Theory Numeric ${ROOT_INCLUDE_DIRS})
 # link_directories(/opt/local/libexec/root6/lib/root )
-
-
 
 
 add_executable(mixing 
@@ -68,7 +65,11 @@ if (test)
   ##############
   # Unit Tests
   ##############
-  add_executable(runUnitTests Test/Test.cpp)
+  add_executable(runUnitTests
+		Test/Test.cpp
+		Numeric/Numeric.cpp
+		Test/Numeric.cpp
+  )		
 
   # Standard linking to gtest stuff.
   target_link_libraries(runUnitTests gtest gtest_main)
@@ -79,7 +80,5 @@ if (test)
   # This is so you can do 'make test' to see all your tests run, instead of
   # manually running the executable runUnitTests to see those specific tests.
   add_test(NAME that-test-I-made COMMAND runUnitTests)
-
-
   
 endif()

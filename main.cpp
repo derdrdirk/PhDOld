@@ -1,6 +1,6 @@
 // Copyright 2016 <Dirk Hornung>
 #include <iostream>
-#include "Experiment/experiment.h"
+#include "Experiment/Experiment.h"
 #include "Theory/theory.h"
 #include "Experiment/Aleph.h"
 #include "Numeric.h"
@@ -8,25 +8,19 @@
 #include "Constants.h"
 
 
-  double func(double x) {
-    return x + x*x + 7*x*x*x*x;
-  }
+double func(double x, double y) {
+  return -2.*x*x*x + 12.*x*x - 20.*x + 8.5;
+}
 
 std::complex<double> func2(std::complex<double> x) {
   return 2.0*(1.-x);
 }
 
+double func3(double x) {
+  return 4. - x;
+}
+
 int main(int argc, char **argv) {
-  Theory th;
-  th.test();
-
- 
-  
-  // Test::Test();
-
-  // ::testing::InitGoogleTest(&argc, argv);
-  // return RUN_ALL_TESTS();
-  
   // Experiment exp(0.1, 3.0, 10000);
   // exp.VAmomAleph();
   // exp.exportData();
@@ -38,15 +32,9 @@ int main(int argc, char **argv) {
 
   // std::cout << "VpA mom: \t" << aleph.VAmom(3., func2) << std::endl;
 
-  // Numeric num;
-  // std::cout << num.integrate(func, -21, 3) << std::endl;
-  
-
-  // th.qgauss(-23.0, 17.0);
-  // double var = th.Dimension0(1);
-  // std::cout << var << std::endl;
-
-  
+  Numeric num;
+  std::cout << num.RungeKutta(0., 4.0, 1., func) << std::endl;
+  //  std::cout << num.integrate(func, 2,  -21.0, 3.0) << std::endl;
   
   std::cout << "The End" << std::endl;
   
