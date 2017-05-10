@@ -61,4 +61,7 @@ class Numeric {
   double RungeKutta(double x1, double x2, double y1,
                     double (*func)(double, double));
 
+  // Find Root / Solve non-linear equation
+  double NewtonRaphson(double xi, double (*func)(double),
+                       double (*Dfunc)(double));
 };

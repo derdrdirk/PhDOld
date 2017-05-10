@@ -16,11 +16,11 @@
 \contentsline {subsection}{\numberline {B.2}$\gamma $-function}{16}{subsection.B.2}
 \contentsline {subsection}{\numberline {B.3}Adler function}{16}{subsection.B.3}
 \contentsline {section}{\numberline {C}Numerical Analysis}{16}{appendix.C}
-\contentsline {subsection}{\numberline {C.1}Newton-Raphson Method}{17}{subsection.C.1}
-\contentsline {subsection}{\numberline {C.2}Newton-Cotes}{17}{subsection.C.2}
-\contentsline {subsection}{\numberline {C.3}Gauss Quadrature}{17}{subsection.C.3}
-\contentsline {subsection}{\numberline {C.4}Runge-Kutta Methods (Ordinary Differential Equations)}{17}{subsection.C.4}
-\contentsline {subsubsection}{\numberline {C.4.1}Euler's Method}{17}{subsubsection.C.4.1}
-\contentsline {subsubsection}{\numberline {C.4.2}Heun's Method}{18}{subsubsection.C.4.2}
-\contentsline {subsubsection}{\numberline {C.4.3}Runge-Kutta Methods}{18}{subsubsection.C.4.3}
-\contentsline {subsection}{\numberline {C.5}Discrepancies between Matthias and my Code}{19}{subsection.C.5}
+\contentsline {subsection}{\numberline {C.1}Finding Roots: Newton-Raphson Method}{16}{subsection.C.1}
+\contentsline {subsection}{\numberline {C.2}Newton-Cotes}{18}{subsection.C.2}
+\contentsline {subsection}{\numberline {C.3}Gauss Quadrature}{18}{subsection.C.3}
+\contentsline {subsection}{\numberline {C.4}Runge-Kutta Methods (Ordinary Differential Equations)}{18}{subsection.C.4}
+\contentsline {subsubsection}{\numberline {C.4.1}Euler's Method}{18}{subsubsection.C.4.1}
+\contentsline {subsubsection}{\numberline {C.4.2}Heun's Method}{19}{subsubsection.C.4.2}
+\contentsline {subsubsection}{\numberline {C.4.3}Runge-Kutta Methods}{19}{subsubsection.C.4.3}
+\contentsline {subsection}{\numberline {C.5}Discrepancies between Matthias and my Code}{20}{subsection.C.5}

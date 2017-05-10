@@ -31,6 +31,10 @@ class Constants {
     return 0;
   }
 
+  double betaFkt(double mu, double as) {
+    return std::pow(as, 2)*beta(1);
+  }
+
   double gamma(int i) {
     switch (i) {
       case 1: return 3./2.*C_f;

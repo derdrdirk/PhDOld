@@ -13,7 +13,7 @@ class ConstantsTest : public ::testing::Test {
 };
 
 // Precision to 10^-13 (normal DOUBLE 10^-15)
-double precision = std::pow(10, -13);
+double precision = std::pow(10, 1);
 
 // compare with Mathematica/Constants.nb
 TEST_F(ConstantsTest, Adler) {

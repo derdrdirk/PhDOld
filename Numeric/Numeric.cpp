@@ -4,13 +4,10 @@
 #include <math.h>
 #include <complex>
 
-
-// 3rd Numerical Recpies p.184 gauleg
-// Gauss Quadratur
-
+// Runge-Kutta Method to solve differential equation
 double Numeric::RungeKutta(double x1, double x2, double y1,
                             double (*func)(double, double) ) {
-  int NSteps = 50;  // Number of steps
+  int NSteps = 5000;  // Number of steps
   double h = (x2 - x1)/NSteps;  // Step size
 
   // Stepper
@@ -26,9 +23,21 @@ double Numeric::RungeKutta(double x1, double x2, double y1,
     // x_{i+1} and y_{i+1}
     xi = xi + h;
     yi = yi + 1./6.*(k1 + 2.*k2 + 2.*k3 + k4)*h;
+    //    std::cout << "xi : " << xi << ", yi : " << yi << std::endl;
   }
   
   return yi;
 }
 
 
+// Find Root - Newton-Raphson method
+// repeat until precision: 1e-15 is reached
+double Numeric::NewtonRaphson(double xi, double (*func)(double),
+                               double (*Dfunc)(double)) {
+  double y = 1;
+  while ( y > 1e-15 ) {
+    xi = xi - func(xi)/Dfunc(xi);
+    y = func(xi);
+  }
+  return xi;
+}

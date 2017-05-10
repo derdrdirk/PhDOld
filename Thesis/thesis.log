@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  6 MAY 2017 17:45
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2016.7.12)  10 MAY 2017 14:08
  restricted system commands enabled.
  file:line:error style messages enabled.
 **thesis.tex
@@ -1557,16 +1557,17 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 122.
 
+[16]
 
-Package natbib Warning: Citation `Chapra2015' on page 16 undefined on input line
- 162.
+Package natbib Warning: Citation `Chapra2015' on page 17 undefined on input line
+ 208.
 
-[16] [17] [18]) [19] (./thesis.bbl)
+[17] [18] [19]) [20] (./thesis.bbl)
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 330.
-[20
+[21
 
 Missing character: There is no ò (U+00F2) in font cmr10!
 Missing character: There is no ̈ (U+0308) in font cmr10!
@@ -1577,7 +1578,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 330.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 330.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 330.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 87F1827CBAD70F7B2B96E3C8C32BF2D7;1816.
+(rerunfilecheck)             Checksum: CC70FA1D5FEF707F5495791E139D7FE4;1831.
 
 
 LaTeX Warning: There were undefined references.
@@ -1586,12 +1587,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 330.
 )
 
 Here is how much of LuaTeX's memory you used:
- 15227 strings out of 495118
+ 15239 strings out of 495118
  100000,383344 words of node,token memory allocated
- 17408 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2427 glue, 1 kern, 50 glue_spec, 1 write nodes
-   avail lists: 2:45,3:162,4:92,5:287,6:2205,7:553,8:131,9:748,10:16,11:156
- 18090 multiletter control sequences out of 65536+600000
+ 17954 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2505 glue, 1 kern, 50 glue_spec, 1 write nodes
+   avail lists: 2:45,3:162,4:92,5:287,6:2192,7:553,8:131,9:748,10:16,11:155
+ 18091 multiletter control sequences out of 65536+600000
  85 fonts using 3524555 bytes
  41i,23n,43p,864b,399s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
@@ -1619,9 +1620,9 @@ msfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on thesis.pdf (21 pages, 436358 bytes).
+Output written on thesis.pdf (22 pages, 444602 bytes).
 
-PDF statistics: 518 PDF objects out of 1000 (max. 8388607)
- 178 named destinations out of 1000 (max. 131072)
+PDF statistics: 535 PDF objects out of 1000 (max. 8388607)
+ 189 named destinations out of 1000 (max. 131072)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

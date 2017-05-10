@@ -155,7 +155,53 @@ from \cite{Jamin2006}
 		
 \section{Numerical Analysis}
 \cite{Chapra2010} \cite{Press2007}
-\subsection{Newton-Raphson Method}
+\subsection{Finding Roots: Newton-Raphson Method}
+With the running of the strong coupling $\alpha_s$ we had to solve a non-linear equation. A common method to deal with this problem is rewriting an equation in the form
+\begin{equation}
+	f(x) = 0.
+\end{equation}
+So we solve for $x$ by finding the root of $f(x)$. 
+
+The standard method of numerically solving for the root is called \textbf{Newton-Raphson method}. It is an \textit{open method}, meaning that we do not have to \textit{bracket} the root within a before known interval, but rather can start with any $x_i$ and the method will most probably find the position\footnote{In this thesis we only had to deal with singular roots, for multiple roots one should modify the algorithm.} of the root.
+
+Starting by a point $x_i$ we can calculate the tangent, the slope $f'(x_i)$, which root $0 = f'(x_i)$ can be used to generate an iterative description of finding $f(x_r)$, where $x_r$ would be the true root of $f(x)$. 
+
+Geometrically we can calculate the root iteratively from the tangent (slope) at $f(x_i)$ as
+\begin{equation}
+	\label{eq:geometricalNewtonRaphson}
+	0 = f'(x_i) = \frac{f(x_i)}{x_{i+1}-x_i}
+\end{equation}
+yielding the Newton-Raphson method
+\begin{equation}
+	x_{i+1} = x_i + \frac{f(x_i)}{f'(x_i)}.
+\end{equation}
+Another way of deriving the method is by Taylor expanding $f(x_{i+1})$ at $x_i$ up to the second order, which also yield an estimate of the array per iteration $i$
+\begin{equation}
+	0 \overset{!}{=} f(x_{i+1}) = f(x_i) + f'(x_i) (x_{i+1} - x_i) + \mathcal{O}(x_i^2) \quad \Rightarrow \quad x_{i+1} = x_i + \frac{f(x_i)}{f'(x_i)}.
+\end{equation}
+Then we can take the same Taylor expansion to the 3rd order and obtain an estimate for the Error
+\begin{equation}
+	E_i = x_r - x_i
+\end{equation}
+for $E_{i+1}$, while $x_r$ is still the true root for $f(x)$.
+\begin{equation}
+	0 = f(x_i) + f'(x_i)(x_r-x_i) + \frac{f''(x_i)}{2!} (x_r - x_i)^2 + \mathcal{O}(x_i^3)
+\end{equation}
+including \eqref{eq:geometricalNewtonRaphson} yields 
+\begin{equation}
+	-f'(x_i)(x_{i+1} - x_i) + f'(x_i)(x_r - x_i) + \frac{f''(x_i)}{2!} (x_r - x_i)^2,
+\end{equation}
+which then can be rewritten in the form of our iterative error estimator
+\begin{equation}
+	E_{i+1} = x_r - x_{i+1} = \frac{f''(x_i)}{2 f'(x_i)} (x_r - x_i)^2
+\end{equation}
+or
+\begin{equation}
+	E_{i+1} = \frac{f''(x_i)}{2 f'(x_i)} E_i^2.
+\end{equation}
+So roughly speaking the error of an iterative step is proportional to the square of the error of the previous error and the result will get up to two digits more accurate with every iteration. As we aim for double precision, meaning $10^-15$ we have perform ~8 iterations for every root we want to find.
+
+
 \subsection{Newton-Cotes}
 \subsection{Gauss Quadrature}
 \subsection{Runge-Kutta Methods (Ordinary Differential Equations)}
