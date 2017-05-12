@@ -40,4 +40,3 @@ TEST_F(ConstantsTest, Gamma) {
 
 
 
-

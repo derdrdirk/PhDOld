@@ -35,9 +35,12 @@ double Numeric::RungeKutta(double x1, double x2, double y1,
 double Numeric::NewtonRaphson(double xi, double (*func)(double),
                                double (*Dfunc)(double)) {
   double y = 1;
-  while ( y > 1e-15 ) {
+  int i = 0;
+  while ( std::abs(y) > 1e-15 ) {
     xi = xi - func(xi)/Dfunc(xi);
     y = func(xi);
+    i++;
   }
+
   return xi;
 }
